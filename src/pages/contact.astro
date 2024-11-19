@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="WebSuper - Digital Products for the future.">
+  <main>
+    <div class="flex-grow flex flex-col items-center justify-center py-16 px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-dark mb-4">Contact</h2>
+        <p class="text-gray-400 text-xl">
+          Our services will be your top priority.
+        </p>
+      </div>
+      <div class="w-full max-w-lg">
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="w-full text-center flex flex-col space-y-1.5 p-6">
+            <h3 class="text-dark text-2xl font-semibold mb-4">Development</h3>
+            <p class="text-sm text-muted-foreground">
+              Send us a message and we'll get back to you as soon as possible.
+            </p>
+          </div>
+
+          <form
+            id="form"
+            action="https://formspree.io/f/xrbglpjg"
+            method="POST"
+            class="space-y-6"
+          >
+            <div class="px-6">
+              <div class="space-y-2">
+                <label
+                  for="email"
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="Enter your email"
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                />
+              </div>
+            </div>
+
+            <div class="px-6">
+              <div class="space-y-2">
+                <label
+                  for="message"
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  Your message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="How can we help you?"
+                  class="flex min-h-32 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="flex items-center p-6 w-full">
+              <button
+                type="submit"
+                class="inline-flex items-center justify-center rounded-xl bg-neutral-800 text-white hover:bg-black/90 h-10 px-6 py-6 text-base font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+              >
+                Send message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
