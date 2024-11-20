@@ -10,7 +10,7 @@ export const Nav = () => {
                   <div className="pr-2">
                     <img src="/icon.png" alt="test" width="30" height="30" />
                   </div>
-                  <h1 className="text-xl font-bold">WebSuper</h1>
+                  <h1 className="text-xl font-bold">Websuperb</h1>
                 </div>
               </a>
 
