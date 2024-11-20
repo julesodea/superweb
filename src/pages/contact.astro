@@ -78,9 +78,9 @@ import Layout from "../layouts/Layout.astro";
   </main>
 </Layout>
 <script>
-  var form = document.getElementById("my-form");
+  var form: any = document.getElementById("my-form");
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event: any) {
     event.preventDefault();
     var status = document.getElementById("my-form-status");
     var data = new FormData(event.target);
@@ -94,25 +94,13 @@ import Layout from "../layouts/Layout.astro";
       .then((response) => {
         if (response.ok) {
           window.location.href = "/success";
-
-          status.innerHTML = "Thanks for your submission!";
-          form.reset();
         } else {
-          response.json().then((data) => {
-            if (Object.hasOwn(data, "errors")) {
-              status.innerHTML = data["errors"]
-                .map((error) => error["message"])
-                .join(", ");
-            } else {
-              status.innerHTML =
-                "Oops! There was a problem submitting your form";
-            }
-          });
+          window.location.href = "/";
         }
       })
-      .catch((error) => {
-        status.innerHTML = "Oops! There was a problem submitting your form";
+      .catch((error: any) => {
+        alert("Error! Please try again.");
       });
   }
-  form.addEventListener("submit", handleSubmit);
+  form?.addEventListener("submit", handleSubmit);
 </script>
