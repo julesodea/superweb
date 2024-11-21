@@ -1,0 +1,91 @@
+---
+// import { DottedPattern } from "../components/DottedPattern";
+// import { GridPattern } from "../components/GridPattern";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="superweb - Digital Products for the future - Component Land">
+  <main>
+    <div class="flex-grow flex flex-col items-center justify-center py-16 px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-dark mb-6">
+          Component Land
+        </h2>
+        <h3 class="text-xl font-bold text-dark py-4">Cards</h3>
+      </div>
+      <!-- Dotted Card -->
+      <div
+        style={{
+          backgroundImage:
+            "radial-gradient( circle farthest-corner, rgba(0,0,0,.1) 1px, transparent 1px )",
+          backgroundSize: "25px 25px",
+        }}
+        class="border rounded-xl p-6 max-w-4xl shadow-xl text-gray-900 bg-white flex flex-col items-center justify-center space-y-6"
+      >
+        <h1
+          class="text-center bg-white bg-opacity-70 font-semibold text-3xl sm:text-4xl py-3 px-6 rounded-xl"
+        >
+          Heading for card <br /> that has some meaning to it.
+        </h1>
+        <p
+          class="text-center text-lg text-gray-600 py-6 bg-white bg-opacity-70 rounded-lg"
+        >
+          Paragraph about the card content that has a sentence about this long
+          so I can show the card size with actual content existing in it.
+        </p>
+
+        <div class="py-4 w-full">
+          <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <li
+              class="flex flex-col items-center justify-center bg-white bg-opacity-60 p-6 rounded-xl"
+            >
+              <div class="text-center mb-4">
+                <h1 class="text-3xl text-green-500">☑️</h1>
+              </div>
+              <h2 class="font-semibold text-xl text-gray-800 mb-2">
+                Compelling Copy
+              </h2>
+              <p class="text-gray-500 text-center">
+                Crafting words that engage, resonate, and ultimately convince
+                your audience to take action.
+              </p>
+            </li>
+            <li
+              class="flex flex-col items-center justify-center bg-white bg-opacity-60 p-6 rounded-xl"
+            >
+              <div class="text-center mb-4">
+                <h1 class="text-3xl text-blue-500">☑️</h1>
+              </div>
+              <h2 class="font-semibold text-xl text-gray-800 mb-2">
+                Top-Tier Branding
+              </h2>
+              <p class="text-gray-500 text-center">
+                Design a brand identity to standout in a crowded marketplace.
+              </p>
+            </li>
+            <li
+              class="flex flex-col items-center justify-center bg-white bg-opacity-60 p-6 rounded-xl"
+            >
+              <div class="text-center mb-4">
+                <h1 class="text-3xl text-indigo-500">☑️</h1>
+              </div>
+              <h2 class="font-semibold text-center text-xl text-gray-800 mb-2">
+                Conversion-Focused Design
+              </h2>
+              <p class="text-gray-500 text-center">
+                Creating visually appealing designs that are optimized for
+                maximum conversion rates.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-dark mb-4 py-12">Buttons</h3>
+      <button
+        class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-800 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-100 [box-shadow:3px_3px_rgb(40_40_40)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(40_40_40)]"
+        >Click me</button
+      >
+    </div>
+  </main>
+</Layout>

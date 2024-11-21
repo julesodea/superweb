@@ -1,5 +1,6 @@
 ---
 import { Footer } from "../components/Footer";
+import { GridPattern } from "../components/GridPattern";
 import { Nav } from "../components/Nav";
 
 interface Props {
@@ -20,7 +21,8 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Nav />
+    <GridPattern />
+    <Nav client:load />
     <slot />
     <Footer />
   </body>

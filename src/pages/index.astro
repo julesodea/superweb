@@ -1,60 +1,23 @@
 ---
+import { GridPattern } from "../components/GridPattern";
 import { Hero } from "../components/Hero";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="WebSuper - Digital Products for the future.">
+<Layout title="superweb - Digital Products for the future.">
   <main class="min-h-screen flex flex-col">
     {/* Hero Section with Grid Background */}
     <section class="relative">
       {/* SVG Grid Background */}
-      <div class="absolute inset-0 z-0">
-        <svg
-          class="absolute inset-0 h-full w-full rounded"
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <defs>
-            <!-- Define the grid pattern -->
-            <pattern
-              id="grid"
-              width="40"
-              height="40"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 40 0 L 0 0 0 40"
-                fill="none"
-                stroke="rgba(0,0,0,0.05)"
-                width="1"></path>
-            </pattern>
-
-            <!-- Define a smaller fading area in the radial gradient mask -->
-            <mask id="fade-mask">
-              <rect width="100%" height="100%" fill="white"></rect>
-              <!-- Smaller radius for quicker fade -->
-              <circle cx="50%" cy="50%" r="40%" fill="black"></circle>
-            </mask>
-          </defs>
-
-          <!-- Apply grid pattern with the fade effect -->
-          <rect
-            width="100%"
-            height="100%"
-            fill="url(#grid)"
-            mask="url(#fade-mask)"></rect>
-        </svg>
-      </div>
 
       {/* Hero Content */}
       <div class="relative z-10">
         <Hero client:load />
       </div>
     </section>
-
     <section class="bg-[#1C1C1E] py-24">
+      {/* Dotted Grid Background */}
+
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-16">
           <div
@@ -83,12 +46,28 @@ import Layout from "../layouts/Layout.astro";
                 needs to be longer for the card to look good.
               </p>
             </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-b from-gray-800/0 to-gray-800/20 opacity-0 group-hover:opacity-100 transition-opacity"
-            >
-            </div>
           </div>
-
+          <div
+            style={{
+              backgroundImage:
+                "radial-gradient( circle farthest-corner, rgba(0,0,0,.1) 1px, transparent 1px )",
+              backgroundSize: "25px 25px",
+            }}
+            class="border rounded-xl p-6 max-w-4xl shadow-xl text-gray-900 bg-white flex flex-col items-center justify-center space-y-6"
+          >
+            <h1
+              class="text-center bg-white bg-opacity-70 font-semibold text-3xl sm:text-4xl py-3 px-6 rounded-xl"
+            >
+              Design
+            </h1>
+            <p
+              class="text-center text-lg text-gray-600 py-6 bg-white bg-opacity-70 rounded-lg"
+            >
+              Paragraph about the card content that has a sentence about this
+              long so I can show the card size with actual content existing in
+              it.
+            </p>
+          </div>
           <div
             class="relative bg-gray-600/30 rounded-3xl p-8 backdrop-blur-sm overflow-hidden group"
           >
@@ -117,8 +96,56 @@ import Layout from "../layouts/Layout.astro";
                 words at the end here rounds it off.
               </p>
             </div>
+          </div>
+          <div
+            class="relative bg-neutral-50 rounded-3xl p-8 backdrop-blur-sm overflow-hidden group"
+          >
+            {/* Dotted Background */}
             <div
-              class="absolute inset-0 bg-gradient-to-b from-gray-800/0 to-gray-800/20 opacity-0 group-hover:opacity-100 transition-opacity"
+              class="absolute inset-0 pointer-events-none opacity-10"
+              style={{
+                backgroundImage: `radial-gradient(circle at center, rgba(1, 1, 1, 1) 1px, transparent 0.2px)`,
+                backgroundSize: "24px 24px",
+              }}
+            >
+            </div>
+
+            <div class="relative z-10">
+              <h3 class="text-dark text-2xl font-semibold mb-4">Development</h3>
+              <p class="text-gray-400">
+                Your data is encrypted at rest and in transit, processed on our
+                servers in your region of choice. Some more words here.
+              </p>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+            </div>
+          </div>
+          <div
+            class="relative bg-gray-600/30 rounded-3xl p-8 backdrop-blur-sm overflow-hidden group"
+          >
+            {/* Dotted Background */}
+            <div
+              class="absolute inset-0 pointer-events-none opacity-10"
+              style={{
+                backgroundImage: `radial-gradient(circle at center, rgba(255, 255, 255, 1) 1px, transparent 1px)`,
+                backgroundSize: "24px 24px",
+              }}
+            >
+            </div>
+
+            <div class="relative z-10">
+              <h3 class="text-white text-2xl font-semibold mb-4">
+                Development
+              </h3>
+              <p class="text-gray-400">
+                Your data is encrypted at rest and in transit, processed on our
+                servers in your region of choice. Some more words here.
+              </p>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity"
             >
             </div>
           </div>
@@ -133,7 +160,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="flex gap-4 items-center flex-col justify-center px-6 py-4">
           <div class="flex items-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-4">
-              WebSuper Contact
+              superweb Contact
             </h2>
           </div>
 
