@@ -79,22 +79,27 @@ export const LandingComponent = () => {
         `}
       /> */}
 
-          <button
-            onClick={() => setIsDarkMode(!isDarkMode)}
-            className={`
-          text-xs p-2 rounded-xl absolute top-8 right-8
-          overflow-hidden whitespace-nowrap
-          hover:w-auto w-6 z-10
-          ${
-            isDarkMode
-              ? "bg-neutral-800 text-neutral-800 hover:bg-neutral-800 hover:text-slate-100"
-              : "bg-white text-white hover:bg-slate-100 hover:text-slate-950"
-          }
-        `}
-            aria-label="Toggle theme"
-          >
-            {isDarkMode ? "Let there be light" : "Cast darkness upon the light"}
-          </button>
+          <label className="inline-flex items-center cursor-pointer absolute top-4 right-4">
+            <input
+              type="checkbox"
+              checked={isDarkMode}
+              onChange={() => setIsDarkMode(!isDarkMode)}
+              className="sr-only peer"
+            />
+            <div
+              className={`
+    w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 
+    peer-focus:ring-neutral-300 dark:peer-focus:ring-neutral-800 rounded-full peer 
+    dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white 
+    after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white 
+    after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 
+    after:transition-all dark:border-gray-600 peer-checked:bg-neutral-600
+  `}
+            ></div>
+            <span className="sr-only">
+              {isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+            </span>
+          </label>
 
           <div className="flex flex-col h-full justify-center align-center items-start gap-6 relative z-10">
             <div className="flex align-start items-center gap-3">
