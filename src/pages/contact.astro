@@ -1,106 +1,108 @@
 ---
+import { motion } from "motion/react";
+import Button from "../components/Button";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="superweb - Digital Products for the future.">
-  <main>
-    <div class="flex-grow flex flex-col items-center justify-center py-16 px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-dark mb-4">Contact</h2>
-        <p class="text-gray-400 text-xl">
+<Layout title="Superweb - Digital Products for the future.">
+  <main
+    class="h-[75vh] container mx-auto px-4 py-16 max-w-5xl flex items-center justify-center"
+  >
+    <div class="grid md:grid-cols-2 gap-6 items-center justify-center">
+      <div class="text-center md:text-left p-6">
+        <h2 class="text-3xl md:text-5xl font-bold text-dark mb-4">Contact</h2>
+        <p class="text-gray-400 text-lg md:text-xl mb-6">
           Our services will be your top priority.
         </p>
+        <p class="text-sm text-muted-foreground mb-8">
+          Send us a message and we'll get back to you as soon as possible.
+        </p>
       </div>
-      <div class="w-full max-w-lg">
-        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
-          <div class="w-full text-center flex flex-col space-y-1.5 p-6">
-            <h3 class="text-dark text-2xl font-semibold mb-4">Development</h3>
-            <p class="text-sm text-muted-foreground">
-              Send us a message and we'll get back to you as soon as possible.
-            </p>
+
+      <div class="w-full max-w-md mx-auto p-6">
+        <form
+          id="my-form"
+          action="https://formspree.io/f/xrbglpjg"
+          method="POST"
+          class="space-y-6"
+        >
+          <div class="space-y-2">
+            <label for="email" class="block text-sm font-medium text-gray-700">
+              Email address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Enter your email"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                     focus:outline-none focus:ring-2 focus:ring-blue-500
+                     transition duration-200 ease-in-out"
+            />
           </div>
 
-          <form
-            id="my-form"
-            action="https://formspree.io/f/xrbglpjg"
-            method="POST"
-            class="space-y-6"
-          >
-            <div class="px-6">
-              <div class="space-y-2">
-                <label
-                  for="email"
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="Enter your email"
-                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                />
-              </div>
-            </div>
+          <div class="space-y-2">
+            <label
+              for="message"
+              class="block text-sm font-medium text-gray-700"
+            >
+              Your message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="How can we help you?"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                     min-h-[150px] resize-none
+                     focus:outline-none focus:ring-2 focus:ring-blue-500
+                     transition duration-200 ease-in-out"
+            ></textarea>
+          </div>
 
-            <div class="px-6">
-              <div class="space-y-2">
-                <label
-                  for="message"
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  Your message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  placeholder="How can we help you?"
-                  class="flex min-h-32 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
-                ></textarea>
-              </div>
-            </div>
-
-            <div class="flex items-center p-6 w-full">
-              <button
-                type="submit"
-                class="inline-flex items-center justify-center rounded-xl bg-neutral-800 text-white hover:bg-black/90 h-10 px-6 py-6 text-base font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
-              >
-                Send message
-              </button>
-            </div>
-          </form>
-        </div>
+          <div class="flex justify-center md:justify-start">
+            <Button type="submit" variant="light">
+              Send Message
+              <img
+                src="/arrow-right.svg"
+                alt="arrow right"
+                width={15}
+                height={15}
+                class="ml-2 group-hover:translate-x-1 transition-transform duration-200"
+              />
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   </main>
 </Layout>
-<script>
-  var form: any = document.getElementById("my-form");
 
-  async function handleSubmit(event: any) {
+<script>
+  const form = document.getElementById("my-form");
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    var status = document.getElementById("my-form-status");
-    var data = new FormData(event.target);
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          window.location.href = "/success";
-        } else {
-          window.location.href = "/";
-        }
-      })
-      .catch((error: any) => {
-        alert("Error! Please try again.");
+
+    try {
+      const response = await fetch(event.target.action, {
+        method: form.method,
+        body: new FormData(event.target),
+        headers: {
+          Accept: "application/json",
+        },
       });
+
+      if (response.ok) {
+        window.location.href = "/success";
+      } else {
+        window.location.href = "/";
+      }
+    } catch (error) {
+      alert("Error! Please try again.");
+    }
   }
+
   form?.addEventListener("submit", handleSubmit);
 </script>

@@ -6,7 +6,6 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.25 }}
-        className="div"
       >
         <div className="w-fit mb-4 bg-white bg-opacity-70">
           <span className="text-xs font-semibold text-yellow-500 tracking-wide uppercase">
@@ -45,18 +44,6 @@ export const Hero = () => {
         className="div"
       >
         <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-xs mx-auto">
-          {/* <a
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-2xl p-4 bg-black text-white text-lg font-semibold hover:bg-black/90 transition-colors w-full"
-          >
-            Get Started
-          </a>
-          <a
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-2xl border-2 border-gray-200 bg-white px-1 py-4 text-lg font-semibold hover:bg-gray-50 transition-colors w-full"
-          >
-            Learn More
-          </a> */}
           <div className="bg-white">
             <button className="relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-800 bg-transparent px-6 font-medium text-neutral-800 transition-all duration-100 [box-shadow:3px_3px_rgb(50_50_50)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(50_50_50)]">
               Get Started

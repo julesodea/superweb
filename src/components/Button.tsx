@@ -1,14 +1,38 @@
-import { useState } from "react";
+interface ButtonProps {
+  children: React.ReactNode;
+  variant?: "light" | "dark"; // Optional variant prop with union type
+  className?: string; // Optional additional classes
+  href?: string; // Optional href prop for link behavior
+  type?: "button" | "submit" | "reset";
+}
 
-export const Button = () => {
-  const [count, setCount] = useState(0);
+const Button: React.FC<ButtonProps> = ({
+  children,
+  variant = "light",
+  className,
+  href,
+  type = "button",
+}) => {
+  const baseStyles =
+    "group flex items-center align-center justify-center gap-2 font-medium p-4 rounded-3xl hover:scale-105 transition-all duration-200";
 
-  const handleClick = () => {
-    console.log("clicked");
-    setCount((count) => count + 1);
+  const variantStyles = {
+    light: "bg-slate-100 text-slate-800",
+    dark: "bg-slate-800 text-white",
   };
 
-  return <button onClick={handleClick}>Button: {count}</button>;
+  const Tag = href ? "a" : "button";
+  const isButton = Tag === "button";
+
+  return (
+    <Tag
+      href={href}
+      className={`${baseStyles} ${variantStyles[variant]} ${className || ""}`}
+      {...(isButton && { type: type })}
+    >
+      {children}
+    </Tag>
+  );
 };
 
 export default Button;

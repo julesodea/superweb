@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import Button from "./Button";
 
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <nav>
-      <div className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-sm">
-        <div className="border rounded-lg shadow-sm mx-4 my-4">
-          <div className="flex items-center justify-between p-2">
+      <div className="sticky top-0 z-90 w-full bg-white/80 backdrop-blur-sm">
+        <div className="mx-4 my-4">
+          <div className="flex items-center justify-between px-2">
             {/* Logo and Brand */}
             <a href="/" className="flex items-center">
               <div className="pr-2">
@@ -31,12 +32,6 @@ export const Nav = () => {
                 Products
               </a>
               <a
-                href="/"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Solutions
-              </a>
-              <a
                 href="/component-land"
                 className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
               >
@@ -52,9 +47,18 @@ export const Nav = () => {
 
             {/* Desktop CTA Button */}
             <div className="hidden md:block">
-              <button className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-800 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-100 [box-shadow:3px_3px_rgb(40_40_40)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(40_40_40)]">
-                Book A Demo
-              </button>
+              <a href="/contact">
+                <Button className="group" variant="light">
+                  Let's connect{" "}
+                  <img
+                    src="/arrow-right.svg"
+                    alt="arrow right"
+                    width={15}
+                    height={15}
+                    className="group-hover:translate-x-1 transition-transform duration-200"
+                  />
+                </Button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -68,7 +72,7 @@ export const Nav = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden border-t py-4 px-2 space-y-4">
+            <div className="md:hidden border-t border-b py-4 px-2 space-y-4">
               <a
                 href="/"
                 className="block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2"
@@ -93,9 +97,6 @@ export const Nav = () => {
               >
                 Pricing
               </a>
-              <button className="w-full group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-800 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-100 [box-shadow:3px_3px_rgb(40_40_40)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(40_40_40)]">
-                Book A Demo
-              </button>
             </div>
           )}
         </div>

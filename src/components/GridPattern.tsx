@@ -15,16 +15,12 @@ export const GridPattern = () => {
             height="40"
             patternUnits="userSpaceOnUse"
           >
-            <path
-              d="M 40 0 L 0 0 0 40"
-              fill="none"
-              stroke="rgba(0,0,0,0.05)"
-              width="1"
-            ></path>
+            {/* Dotted pattern using circles */}
+            <circle cx="20" cy="20" r="1.5" fill="rgba(0,0,0,0.05)" />
           </pattern>
         </defs>
 
-        <rect width="100%" height="100%" fill="url(#grid)"></rect>
+        <rect width="100%" height="100%" fill="url(#grid)" />
       </svg>
     </div>
   );
