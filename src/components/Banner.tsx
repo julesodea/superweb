@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { useAnimationFrame } from "framer-motion";
-import { div } from "motion/react-client";
 
 interface BannerItem {
   text: string;
