@@ -10,9 +10,10 @@ export const LandingComponent = () => {
       <div className="relative z-10">
         <div
           className={`
-      flex justify-start items-center relative m-6 min-h-[80vh] rounded-3xl p-16 overflow-hidden
-      ${isDarkMode ? "bg-neutral-950" : "bg-gradient-to-br from-neutral-50 to-neutral-100"}
-    `}
+          flex justify-start items-center relative m-4 min-h-[80vh] rounded-3xl 
+          p-4 sm:p-4 md:p-8 lg:p-16 overflow-hidden
+          ${isDarkMode ? "bg-neutral-950" : "bg-gradient-to-br from-neutral-50 to-neutral-100"}
+        `}
         >
           {/* Animated gradient background */}
           <div
@@ -83,10 +84,10 @@ export const LandingComponent = () => {
             className={`
           text-xs p-2 rounded-xl absolute top-8 right-8
           overflow-hidden whitespace-nowrap
-          hover:w-auto w-8 z-10
+          hover:w-auto w-6 z-10
           ${
             isDarkMode
-              ? "bg-slate-800 text-slate-800 hover:bg-slate-700 hover:text-slate-100"
+              ? "bg-neutral-800 text-neutral-800 hover:bg-neutral-800 hover:text-slate-100"
               : "bg-white text-white hover:bg-slate-100 hover:text-slate-950"
           }
         `}
