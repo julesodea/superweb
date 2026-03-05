@@ -1,18 +1,8 @@
 ---
-import RotatingBanner from "../components/Banner";
-import { CallToAction } from "../components/CallToAction";
-import { Features } from "../components/Features";
 import LandingComponent from "../components/LandingComponent";
-import Layout from "../layouts/Layout.astro";
+import LandingLayout from "../layouts/LandingLayout.astro";
 ---
 
-<Layout title="Superweb - Digital Products for the future.">
-  <main class="min-h-screen flex flex-col">
-    <LandingComponent client:load />
-
-    <RotatingBanner client:visible />
-
-    <Features client:visible />
-    <CallToAction />
-  </main>
-</Layout>
+<LandingLayout title="Superweb - Digital Products for the future.">
+  <LandingComponent client:load />
+</LandingLayout>
