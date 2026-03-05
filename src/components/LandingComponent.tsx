@@ -751,10 +751,9 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
     try {
       const form = e.currentTarget;
-      const response = await fetch("https://formspree.io/f/xrbglpjg", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         body: new FormData(form),
-        headers: { Accept: "application/json" },
       });
 
       if (response.ok) {

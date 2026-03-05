@@ -21,7 +21,6 @@ import Layout from "../layouts/Layout.astro";
       <div class="w-full max-w-md mx-auto p-6">
         <form
           id="my-form"
-          action="https://formspree.io/f/xrbglpjg"
           method="POST"
           class="space-y-6"
         >
@@ -85,18 +84,15 @@ import Layout from "../layouts/Layout.astro";
     event.preventDefault();
 
     try {
-      const response = await fetch(event.target.action, {
-        method: form?.method,
+      const response = await fetch("/api/contact", {
+        method: "POST",
         body: new FormData(event.target),
-        headers: {
-          Accept: "application/json",
-        },
       });
 
       if (response.ok) {
         window.location.href = "/success";
       } else {
-        window.location.href = "/";
+        alert("Error sending message. Please try again.");
       }
     } catch (error) {
       alert("Error! Please try again.");
