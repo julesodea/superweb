@@ -14,7 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   type = "button",
 }) => {
   const baseStyles =
-    "group flex items-center align-center justify-center gap-2 font-medium p-4 rounded-3xl hover:scale-105 transition-all duration-200";
+    "group flex items-center align-center justify-center gap-2 font-medium leading-normal px-4 py-2 rounded-3xl hover:scale-105 transition-all duration-200";
 
   const variantStyles = {
     light: "bg-slate-100 text-slate-800",
