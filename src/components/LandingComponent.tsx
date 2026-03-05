@@ -49,7 +49,7 @@ const LandingNav = ({
         isDarkMode ? "bg-neutral-950/80" : "bg-white/80"
       }`}
     >
-      <div className="mx-4 my-4">
+      <div className="mx-4 py-4">
         <div className="flex items-center justify-between px-2">
           <a href="/landing" className="flex items-center gap-2">
             <img
