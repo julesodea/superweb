@@ -317,7 +317,7 @@ const SolutionSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
               }`}
             >
               We focus exclusively on SaaS — so every decision we make is
-              informed by what actually converts in your market.
+              informed by what actually s in your market.
             </p>
           </div>
         </SectionWrapper>
@@ -581,7 +581,7 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
     {
       question: "Is Superweb right for my project?",
       answer:
-        "We work exclusively with SaaS companies and digital product teams. If you're building a software product and need a high-converting web presence — landing pages, marketing sites, or product interfaces — we're your team. If you need a blog or brochure site, we're probably not the best fit.",
+        "We work exclusively with SaaS companies and digital product teams. If you're building a software product and need a high-ing web presence — landing pages, marketing sites, or product interfaces — we're your team. If you need a blog or brochure site, we're probably not the best fit.",
     },
     {
       question: "What if I don't like the design?",
@@ -1100,9 +1100,7 @@ export const LandingComponent = () => {
                   isDarkMode ? "text-slate-50" : "text-slate-800"
                 }`}
               >
-                Your SaaS deserves design
-                <br />
-                that actually converts
+                Your business deserves a better website.
               </motion.h1>
 
               <motion.p
