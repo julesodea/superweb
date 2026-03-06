@@ -45,9 +45,8 @@ const LandingNav = ({
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full backdrop-blur-sm transition-colors duration-300 ${
-        isDarkMode ? "bg-neutral-950/80" : "bg-white/80"
-      }`}
+      className={`sticky top-0 z-50 w-full backdrop-blur-sm transition-colors duration-300 ${isDarkMode ? "bg-neutral-950/80" : "bg-white/80"
+        }`}
     >
       <div className="mx-4 py-4">
         <div className="flex items-center justify-between px-2">
@@ -59,9 +58,8 @@ const LandingNav = ({
               height={28}
             />
             <span
-              className={`text-xl font-light ${
-                isDarkMode ? "text-white" : "text-neutral-950"
-              }`}
+              className={`text-xl font-light ${isDarkMode ? "text-white" : "text-neutral-950"
+                }`}
             >
               superweb
             </span>
@@ -72,11 +70,10 @@ const LandingNav = ({
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
-                  isDarkMode
+                className={`text-sm font-medium transition-colors ${isDarkMode
                     ? "text-slate-400 hover:text-white"
                     : "text-gray-600 hover:text-gray-900"
-                }`}
+                  }`}
               >
                 {link.label}
               </a>
@@ -109,9 +106,8 @@ const LandingNav = ({
                   alt="arrow right"
                   width={15}
                   height={15}
-                  className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                    !isDarkMode ? "invert" : ""
-                  }`}
+                  className={`group-hover:translate-x-1 transition-transform duration-200 ${!isDarkMode ? "invert" : ""
+                    }`}
                 />
               </Button>
             </a>
@@ -137,9 +133,8 @@ const LandingNav = ({
             </label>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2 text-sm font-medium ${
-                isDarkMode ? "text-slate-300" : "text-gray-600"
-              }`}
+              className={`p-2 text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-gray-600"
+                }`}
             >
               {isMenuOpen ? "CLOSE" : "MENU"}
             </button>
@@ -148,20 +143,18 @@ const LandingNav = ({
 
         {isMenuOpen && (
           <div
-            className={`md:hidden py-4 px-2 space-y-4 border-t ${
-              isDarkMode ? "border-slate-800" : "border-gray-200"
-            }`}
+            className={`md:hidden py-4 px-2 space-y-4 border-t ${isDarkMode ? "border-slate-800" : "border-gray-200"
+              }`}
           >
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block text-sm font-medium py-2 transition-colors ${
-                  isDarkMode
+                className={`block text-sm font-medium py-2 transition-colors ${isDarkMode
                     ? "text-slate-400 hover:text-white"
                     : "text-gray-600 hover:text-gray-900"
-                }`}
+                  }`}
               >
                 {link.label}
               </a>
@@ -177,9 +170,8 @@ const LandingNav = ({
                   alt="arrow right"
                   width={15}
                   height={15}
-                  className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                    !isDarkMode ? "invert" : ""
-                  }`}
+                  className={`group-hover:translate-x-1 transition-transform duration-200 ${!isDarkMode ? "invert" : ""
+                    }`}
                 />
               </Button>
             </a>
@@ -213,9 +205,8 @@ const ProblemSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
         <SectionWrapper>
           <div className="text-center mb-16">
             <h2
-              className={`text-3xl md:text-5xl font-bold mb-6 ${
-                isDarkMode ? "text-white" : "text-slate-800"
-              }`}
+              className={`text-3xl md:text-5xl font-bold mb-6 ${isDarkMode ? "text-white" : "text-slate-800"
+                }`}
             >
               Sound familiar?
             </h2>
@@ -226,23 +217,20 @@ const ProblemSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           {pains.map((pain, index) => (
             <SectionWrapper key={index}>
               <div
-                className={`rounded-2xl p-8 md:p-10 border-l-4 ${
-                  isDarkMode
-                    ? "bg-slate-800/30 border-slate-500"
-                    : "bg-neutral-50 border-neutral-300"
-                }`}
+                className={`rounded-2xl p-8 md:p-10 ${isDarkMode
+                    ? "bg-slate-800/30"
+                    : "bg-neutral-50"
+                  }`}
               >
                 <h3
-                  className={`text-xl md:text-2xl font-semibold mb-3 ${
-                    isDarkMode ? "text-white" : "text-slate-800"
-                  }`}
+                  className={`text-xl md:text-2xl font-semibold mb-3 ${isDarkMode ? "text-white" : "text-slate-800"
+                    }`}
                 >
                   {pain.headline}
                 </h3>
                 <p
-                  className={`text-lg leading-relaxed ${
-                    isDarkMode ? "text-slate-400" : "text-slate-500"
-                  }`}
+                  className={`text-lg leading-relaxed ${isDarkMode ? "text-slate-400" : "text-slate-500"
+                    }`}
                 >
                   {pain.body}
                 </p>
@@ -253,9 +241,8 @@ const ProblemSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
         <SectionWrapper>
           <p
-            className={`text-center text-xl md:text-2xl font-medium mt-16 ${
-              isDarkMode ? "text-slate-200" : "text-slate-700"
-            }`}
+            className={`text-center text-xl md:text-2xl font-medium mt-16 ${isDarkMode ? "text-slate-200" : "text-slate-700"
+              }`}
           >
             You don't need another agency.
             <br />
@@ -296,25 +283,22 @@ const SolutionSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
         <SectionWrapper>
           <div className="text-center mb-16">
             <span
-              className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
-                isDarkMode
-                  ? "bg-slate-800 text-slate-300"
+              className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
+                  ? "bg-[#FFC30E] text-black"
                   : "bg-neutral-100 text-neutral-600"
-              }`}
+                }`}
             >
               How we solve it
             </span>
             <h2
-              className={`text-4xl md:text-5xl font-bold mb-4 ${
-                isDarkMode ? "text-white" : "text-slate-800"
-              }`}
+              className={`text-4xl md:text-5xl font-bold mb-4 ${isDarkMode ? "text-white" : "text-slate-800"
+                }`}
             >
               Design that drives revenue
             </h2>
             <p
-              className={`text-lg max-w-2xl mx-auto ${
-                isDarkMode ? "text-slate-400" : "text-slate-500"
-              }`}
+              className={`text-lg max-w-2xl mx-auto ${isDarkMode ? "text-slate-400" : "text-slate-500"
+                }`}
             >
               We focus exclusively on SaaS — so every decision we make is
               informed by what actually s in your market.
@@ -326,23 +310,20 @@ const SolutionSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           {solutions.map((solution, index) => (
             <SectionWrapper key={index}>
               <div
-                className={`rounded-2xl p-8 h-full transition-colors ${
-                  isDarkMode
+                className={`rounded-2xl p-8 h-full transition-colors ${isDarkMode
                     ? "bg-slate-800/50 hover:bg-slate-800/80"
                     : "bg-neutral-50 hover:bg-neutral-100"
-                }`}
+                  }`}
               >
                 <span
-                  className={`inline-block text-3xl font-bold mb-4 ${
-                    isDarkMode ? "text-slate-600" : "text-neutral-300"
-                  }`}
+                  className={`inline-block text-3xl font-bold mb-4 ${isDarkMode ? "text-slate-600" : "text-neutral-300"
+                    }`}
                 >
                   {solution.icon}
                 </span>
                 <h3
-                  className={`text-xl font-semibold mb-3 ${
-                    isDarkMode ? "text-white" : "text-slate-800"
-                  }`}
+                  className={`text-xl font-semibold mb-3 ${isDarkMode ? "text-white" : "text-slate-800"
+                    }`}
                 >
                   {solution.title}
                 </h3>
@@ -398,18 +379,16 @@ const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
         <SectionWrapper>
           <div className="text-center mb-16">
             <span
-              className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
-                isDarkMode
-                  ? "bg-slate-800 text-slate-300"
+              className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
+                  ? "bg-[#FFC30E] text-black"
                   : "bg-neutral-100 text-neutral-600"
-              }`}
+                }`}
             >
               Results
             </span>
             <h2
-              className={`text-4xl md:text-5xl font-bold mb-4 ${
-                isDarkMode ? "text-white" : "text-slate-800"
-              }`}
+              className={`text-4xl md:text-5xl font-bold mb-4 ${isDarkMode ? "text-white" : "text-slate-800"
+                }`}
             >
               Don't take our word for it
             </h2>
@@ -418,16 +397,14 @@ const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
         <SectionWrapper>
           <div
-            className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 rounded-2xl p-8 ${
-              isDarkMode ? "bg-slate-800/50" : "bg-neutral-50"
-            }`}
+            className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 rounded-2xl p-8 ${isDarkMode ? "bg-slate-800/50" : "bg-neutral-50"
+              }`}
           >
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div
-                  className={`text-4xl md:text-5xl font-bold mb-2 ${
-                    isDarkMode ? "text-white" : "text-slate-800"
-                  }`}
+                  className={`text-4xl md:text-5xl font-bold mb-2 ${isDarkMode ? "text-white" : "text-slate-800"
+                    }`}
                 >
                   {stat.number}
                 </div>
@@ -447,36 +424,31 @@ const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           {testimonials.map((t, index) => (
             <SectionWrapper key={index}>
               <div
-                className={`rounded-2xl p-8 h-full flex flex-col justify-between ${
-                  isDarkMode ? "bg-slate-800/30" : "bg-neutral-50"
-                }`}
+                className={`rounded-2xl p-8 h-full flex flex-col justify-between ${isDarkMode ? "bg-slate-800/30" : "bg-neutral-50"
+                  }`}
               >
                 <p
-                  className={`text-lg mb-6 leading-relaxed ${
-                    isDarkMode ? "text-slate-300" : "text-slate-600"
-                  }`}
+                  className={`text-lg mb-6 leading-relaxed ${isDarkMode ? "text-slate-300" : "text-slate-600"
+                    }`}
                 >
                   "{t.quote}"
                 </p>
                 <div>
                   <div
-                    className={`font-semibold ${
-                      isDarkMode ? "text-white" : "text-slate-800"
-                    }`}
+                    className={`font-semibold ${isDarkMode ? "text-white" : "text-slate-800"
+                      }`}
                   >
                     {t.name}
                   </div>
                   <div
-                    className={`text-sm ${
-                      isDarkMode ? "text-slate-500" : "text-slate-400"
-                    }`}
+                    className={`text-sm ${isDarkMode ? "text-slate-500" : "text-slate-400"
+                      }`}
                   >
                     {t.role}
                   </div>
                   <div
-                    className={`text-sm font-medium mt-2 ${
-                      isDarkMode ? "text-slate-400" : "text-slate-500"
-                    }`}
+                    className={`text-sm font-medium mt-2 ${isDarkMode ? "text-slate-400" : "text-slate-500"
+                      }`}
                   >
                     {t.metric}
                   </div>
@@ -519,18 +491,16 @@ const HowItWorksSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
         <SectionWrapper>
           <div className="text-center mb-16">
             <span
-              className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
-                isDarkMode
-                  ? "bg-slate-800 text-slate-300"
+              className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
+                  ? "bg-[#FFC30E] text-black"
                   : "bg-neutral-100 text-neutral-600"
-              }`}
+                }`}
             >
               Process
             </span>
             <h2
-              className={`text-4xl md:text-5xl font-bold mb-4 ${
-                isDarkMode ? "text-white" : "text-slate-800"
-              }`}
+              className={`text-4xl md:text-5xl font-bold mb-4 ${isDarkMode ? "text-white" : "text-slate-800"
+                }`}
             >
               Three steps. That's it.
             </h2>
@@ -542,24 +512,21 @@ const HowItWorksSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <SectionWrapper key={index}>
               <div className="flex items-start gap-6 md:gap-10">
                 <span
-                  className={`text-5xl md:text-6xl font-bold shrink-0 ${
-                    isDarkMode ? "text-slate-700" : "text-neutral-200"
-                  }`}
+                  className={`text-5xl md:text-6xl font-bold shrink-0 w-[1.5em] text-center tabular-nums ${isDarkMode ? "text-slate-700" : "text-neutral-200"
+                    }`}
                 >
                   {item.step}
                 </span>
                 <div>
                   <h3
-                    className={`text-2xl font-semibold mb-2 ${
-                      isDarkMode ? "text-white" : "text-slate-800"
-                    }`}
+                    className={`text-2xl font-semibold mb-2 ${isDarkMode ? "text-white" : "text-slate-800"
+                      }`}
                   >
                     {item.title}
                   </h3>
                   <p
-                    className={`text-lg ${
-                      isDarkMode ? "text-slate-400" : "text-slate-500"
-                    }`}
+                    className={`text-lg ${isDarkMode ? "text-slate-400" : "text-slate-500"
+                      }`}
                   >
                     {item.description}
                   </p>
@@ -611,18 +578,16 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
         <SectionWrapper>
           <div className="text-center mb-16">
             <span
-              className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
-                isDarkMode
-                  ? "bg-slate-800 text-slate-300"
+              className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
+                  ? "bg-[#FFC30E] text-black"
                   : "bg-neutral-100 text-neutral-600"
-              }`}
+                }`}
             >
               FAQ
             </span>
             <h2
-              className={`text-4xl md:text-5xl font-bold ${
-                isDarkMode ? "text-white" : "text-slate-800"
-              }`}
+              className={`text-4xl md:text-5xl font-bold ${isDarkMode ? "text-white" : "text-slate-800"
+                }`}
             >
               Questions? Answered.
             </h2>
@@ -633,25 +598,22 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           {faqs.map((faq, index) => (
             <SectionWrapper key={index}>
               <div
-                className={`rounded-2xl overflow-hidden ${
-                  isDarkMode ? "bg-slate-800/30" : "bg-neutral-50"
-                }`}
+                className={`rounded-2xl overflow-hidden ${isDarkMode ? "bg-slate-800/30" : "bg-neutral-50"
+                  }`}
               >
                 <button
                   onClick={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
-                  className={`w-full text-left p-6 flex justify-between items-center gap-4 ${
-                    isDarkMode
+                  className={`w-full text-left p-6 flex justify-between items-center gap-4 ${isDarkMode
                       ? "text-white hover:bg-slate-800/50"
                       : "text-slate-800 hover:bg-neutral-100"
-                  } transition-colors`}
+                    } transition-colors`}
                 >
                   <span className="text-lg font-medium">{faq.question}</span>
                   <span
-                    className={`text-2xl shrink-0 transition-transform duration-200 ${
-                      openIndex === index ? "rotate-45" : ""
-                    }`}
+                    className={`text-2xl shrink-0 transition-transform duration-200 ${openIndex === index ? "rotate-45" : ""
+                      }`}
                   >
                     +
                   </span>
@@ -661,9 +623,8 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     transition={{ duration: 0.2 }}
-                    className={`px-6 pb-6 ${
-                      isDarkMode ? "text-slate-400" : "text-slate-500"
-                    }`}
+                    className={`px-6 pt-2 pb-6 ${isDarkMode ? "text-slate-400" : "text-slate-500"
+                      }`}
                   >
                     <p className="leading-relaxed">{faq.answer}</p>
                   </motion.div>
@@ -684,30 +645,26 @@ const FinalCTASection = ({ isDarkMode }: { isDarkMode: boolean }) => {
       <div className="max-w-4xl mx-auto">
         <SectionWrapper>
           <div
-            className={`rounded-3xl p-10 md:p-16 text-center ${
-              isDarkMode ? "bg-slate-800/50" : "bg-neutral-50"
-            }`}
+            className={`rounded-3xl p-10 md:p-16 text-center ${isDarkMode ? "bg-slate-800/50" : "bg-neutral-50"
+              }`}
           >
             <h2
-              className={`text-3xl md:text-5xl font-bold mb-6 ${
-                isDarkMode ? "text-white" : "text-slate-800"
-              }`}
+              className={`text-3xl md:text-5xl font-bold mb-6 ${isDarkMode ? "text-white" : "text-slate-800"
+                }`}
             >
               Stop losing customers to bad design
             </h2>
             <p
-              className={`text-lg md:text-xl mb-4 max-w-2xl mx-auto ${
-                isDarkMode ? "text-slate-300" : "text-slate-600"
-              }`}
+              className={`text-lg md:text-xl mb-4 max-w-2xl mx-auto ${isDarkMode ? "text-slate-300" : "text-slate-600"
+                }`}
             >
               Go from a site that "looks nice" to one that prints money. Book a
               free strategy call — we'll show you exactly what's costing you
               conversions.
             </p>
             <p
-              className={`text-sm mb-8 ${
-                isDarkMode ? "text-slate-500" : "text-slate-400"
-              }`}
+              className={`text-sm mb-8 ${isDarkMode ? "text-slate-500" : "text-slate-400"
+                }`}
             >
               No commitment. No sales pitch. Just honest advice on your product.
             </p>
@@ -719,16 +676,14 @@ const FinalCTASection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                   alt="arrow right"
                   width={15}
                   height={15}
-                  className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                    !isDarkMode ? "invert" : ""
-                  }`}
+                  className={`group-hover:translate-x-1 transition-transform duration-200 ${!isDarkMode ? "invert" : ""
+                    }`}
                 />
               </Button>
             </div>
             <p
-              className={`text-xs mt-6 ${
-                isDarkMode ? "text-slate-600" : "text-slate-400"
-              }`}
+              className={`text-xs mt-6 ${isDarkMode ? "text-slate-600" : "text-slate-400"
+                }`}
             >
               Not satisfied? Full refund. No questions asked.
             </p>
@@ -774,32 +729,28 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <span
-                className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
-                  isDarkMode
-                    ? "bg-slate-800 text-slate-300"
+                className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
+                    ? "bg-[#FFC30E] text-black"
                     : "bg-neutral-100 text-neutral-600"
-                }`}
+                  }`}
               >
                 Contact
               </span>
               <h2
-                className={`text-4xl md:text-5xl font-bold mb-4 ${
-                  isDarkMode ? "text-white" : "text-slate-800"
-                }`}
+                className={`text-4xl md:text-5xl font-bold mb-4 ${isDarkMode ? "text-white" : "text-slate-800"
+                  }`}
               >
                 Let's talk
               </h2>
               <p
-                className={`text-lg mb-6 ${
-                  isDarkMode ? "text-slate-400" : "text-slate-500"
-                }`}
+                className={`text-lg mb-6 ${isDarkMode ? "text-slate-400" : "text-slate-500"
+                  }`}
               >
                 Tell us about your project. We respond within 24 hours.
               </p>
               <div
-                className={`space-y-3 text-sm ${
-                  isDarkMode ? "text-slate-500" : "text-slate-400"
-                }`}
+                className={`space-y-3 text-sm ${isDarkMode ? "text-slate-500" : "text-slate-400"
+                  }`}
               >
                 <p>No commitment required</p>
                 <p>Free strategy advice included</p>
@@ -810,14 +761,12 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <div>
               {status === "success" ? (
                 <div
-                  className={`rounded-2xl p-8 text-center ${
-                    isDarkMode ? "bg-slate-800/50" : "bg-neutral-50"
-                  }`}
+                  className={`rounded-2xl p-8 text-center ${isDarkMode ? "bg-slate-800/50" : "bg-neutral-50"
+                    }`}
                 >
                   <h3
-                    className={`text-2xl font-semibold mb-2 ${
-                      isDarkMode ? "text-white" : "text-slate-800"
-                    }`}
+                    className={`text-2xl font-semibold mb-2 ${isDarkMode ? "text-white" : "text-slate-800"
+                      }`}
                   >
                     Message sent!
                   </h3>
@@ -834,9 +783,8 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                   <div className="space-y-2">
                     <label
                       htmlFor="landing-email"
-                      className={`block text-sm font-medium ${
-                        isDarkMode ? "text-slate-300" : "text-gray-700"
-                      }`}
+                      className={`block text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-gray-700"
+                        }`}
                     >
                       Email address
                     </label>
@@ -846,20 +794,18 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                       name="email"
                       required
                       placeholder="you@company.com"
-                      className={`w-full px-4 py-3 rounded-xl border transition focus:outline-none focus:ring-2 ${
-                        isDarkMode
+                      className={`w-full px-4 py-3 rounded-xl border transition focus:outline-none focus:ring-2 ${isDarkMode
                           ? "bg-slate-800/50 border-slate-700 text-white placeholder-slate-500 focus:ring-slate-500"
                           : "bg-white border-gray-300 text-slate-800 placeholder-gray-400 focus:ring-slate-400"
-                      }`}
+                        }`}
                     />
                   </div>
 
                   <div className="space-y-2">
                     <label
                       htmlFor="landing-message"
-                      className={`block text-sm font-medium ${
-                        isDarkMode ? "text-slate-300" : "text-gray-700"
-                      }`}
+                      className={`block text-sm font-medium ${isDarkMode ? "text-slate-300" : "text-gray-700"
+                        }`}
                     >
                       Tell us about your project
                     </label>
@@ -868,11 +814,10 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                       name="message"
                       required
                       placeholder="What are you building? What's the timeline?"
-                      className={`w-full px-4 py-3 rounded-xl border min-h-[150px] resize-none transition focus:outline-none focus:ring-2 ${
-                        isDarkMode
+                      className={`w-full px-4 py-3 rounded-xl border min-h-[150px] resize-none transition focus:outline-none focus:ring-2 ${isDarkMode
                           ? "bg-slate-800/50 border-slate-700 text-white placeholder-slate-500 focus:ring-slate-500"
                           : "bg-white border-gray-300 text-slate-800 placeholder-gray-400 focus:ring-slate-400"
-                      }`}
+                        }`}
                     />
                   </div>
 
@@ -892,9 +837,8 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                       alt="arrow right"
                       width={15}
                       height={15}
-                      className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                        !isDarkMode ? "invert" : ""
-                      }`}
+                      className={`group-hover:translate-x-1 transition-transform duration-200 ${!isDarkMode ? "invert" : ""
+                        }`}
                     />
                   </Button>
                 </form>
@@ -911,24 +855,21 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
 const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
     <footer
-      className={`py-8 mt-auto transition-colors duration-300 ${
-        isDarkMode ? "text-slate-500" : "text-neutral-600"
-      }`}
+      className={`py-8 mt-auto transition-colors duration-300 ${isDarkMode ? "text-slate-500" : "text-neutral-600"
+        }`}
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3
-              className={`text-2xl mb-4 font-bold ${
-                isDarkMode ? "text-white" : "text-neutral-950"
-              }`}
+              className={`text-2xl mb-4 font-bold ${isDarkMode ? "text-white" : "text-neutral-950"
+                }`}
             >
               superweb
             </h3>
             <p
-              className={`text-sm ${
-                isDarkMode ? "text-slate-500" : "text-neutral-600"
-              }`}
+              className={`text-sm ${isDarkMode ? "text-slate-500" : "text-neutral-600"
+                }`}
             >
               We make the web a super place for the future.
             </p>
@@ -936,16 +877,14 @@ const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
           <div>
             <h3
-              className={`text-lg font-semibold mb-4 ${
-                isDarkMode ? "text-slate-300" : "text-neutral-800"
-              }`}
+              className={`text-lg font-semibold mb-4 ${isDarkMode ? "text-slate-300" : "text-neutral-800"
+                }`}
             >
               Quick Links
             </h3>
             <ul
-              className={`space-y-2 text-sm ${
-                isDarkMode ? "text-slate-500" : "text-neutral-600"
-              }`}
+              className={`space-y-2 text-sm ${isDarkMode ? "text-slate-500" : "text-neutral-600"
+                }`}
             >
               <li>
                 <a
@@ -976,16 +915,14 @@ const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
           <div>
             <h3
-              className={`text-lg font-semibold mb-4 ${
-                isDarkMode ? "text-slate-300" : "text-neutral-800"
-              }`}
+              className={`text-lg font-semibold mb-4 ${isDarkMode ? "text-slate-300" : "text-neutral-800"
+                }`}
             >
               Contact Us
             </h3>
             <ul
-              className={`space-y-2 text-sm ${
-                isDarkMode ? "text-slate-500" : "text-neutral-600"
-              }`}
+              className={`space-y-2 text-sm ${isDarkMode ? "text-slate-500" : "text-neutral-600"
+                }`}
             >
               <li>Email: hi@superweb.co</li>
             </ul>
@@ -993,9 +930,8 @@ const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
         </div>
 
         <div
-          className={`mt-8 pt-4 text-center text-xs ${
-            isDarkMode ? "text-slate-600" : "text-neutral-500"
-          }`}
+          className={`mt-8 pt-4 text-center text-xs ${isDarkMode ? "text-slate-600" : "text-neutral-500"
+            }`}
         >
           <p>
             &copy; {new Date().getFullYear()} superweb. All rights reserved.
@@ -1020,9 +956,8 @@ export const LandingComponent = () => {
 
   return (
     <div
-      className={`transition-colors duration-300 ${
-        isDarkMode ? "bg-neutral-950" : "bg-white"
-      }`}
+      className={`transition-colors duration-300 ${isDarkMode ? "bg-neutral-950" : "bg-white"
+        }`}
     >
       {/* Nav */}
       <LandingNav
@@ -1044,10 +979,9 @@ export const LandingComponent = () => {
             <div
               className={`
                 absolute inset-0 animate-gradient
-                ${
-                  isDarkMode
-                    ? "bg-gradient-to-br from-slate-800/20 via-slate-700/20 to-slate-800/20"
-                    : "bg-gradient-to-br from-neutral-100/40 via-neutral-100/40 to-neutral-100/40"
+                ${isDarkMode
+                  ? "bg-gradient-to-br from-slate-800/20 via-slate-700/20 to-slate-800/20"
+                  : "bg-gradient-to-br from-neutral-100/40 via-neutral-100/40 to-neutral-100/40"
                 }
               `}
             />
@@ -1057,20 +991,18 @@ export const LandingComponent = () => {
               <div
                 className={`
                   absolute inset-0 bg-[size:4rem_4rem]
-                  ${
-                    isDarkMode
-                      ? "bg-[linear-gradient(to_right,#64748b20_1px,transparent_1px),linear-gradient(to_bottom,#64748b20_1px,transparent_1px)]"
-                      : "bg-[linear-gradient(to_right,#4b5563_1px,transparent_1px),linear-gradient(to_bottom,#4b5563_1px,transparent_1px)] opacity-[0.08]"
+                  ${isDarkMode
+                    ? "bg-[linear-gradient(to_right,#64748b20_1px,transparent_1px),linear-gradient(to_bottom,#64748b20_1px,transparent_1px)]"
+                    : "bg-[linear-gradient(to_right,#4b5563_1px,transparent_1px),linear-gradient(to_bottom,#4b5563_1px,transparent_1px)] opacity-[0.08]"
                   }
                 `}
               />
               <div
                 className={`
                   absolute inset-0
-                  ${
-                    isDarkMode
-                      ? "bg-[radial-gradient(circle_800px_at_100%_200px,#64748b10,transparent)]"
-                      : "bg-[radial-gradient(circle_800px_at_100%_200px,#818cf810,transparent)]"
+                  ${isDarkMode
+                    ? "bg-[radial-gradient(circle_800px_at_100%_200px,#64748b10,transparent)]"
+                    : "bg-[radial-gradient(circle_800px_at_100%_200px,#818cf810,transparent)]"
                   }
                 `}
               />
@@ -1095,9 +1027,8 @@ export const LandingComponent = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.15 }}
-                className={`gabarito text-4xl sm:text-5xl md:text-6xl font-bold leading-tight ${
-                  isDarkMode ? "text-slate-50" : "text-slate-800"
-                }`}
+                className={`gabarito text-4xl sm:text-5xl md:text-6xl font-bold leading-tight ${isDarkMode ? "text-slate-50" : "text-slate-800"
+                  }`}
               >
                 Your business deserves a better website.
               </motion.h1>
@@ -1106,13 +1037,11 @@ export const LandingComponent = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.35 }}
-                className={`text-lg md:text-xl max-w-xl ${
-                  isDarkMode ? "text-slate-300" : "text-slate-600"
-                }`}
+                className={`text-lg md:text-xl max-w-xl ${isDarkMode ? "text-slate-300" : "text-slate-600"
+                  }`}
               >
                 We design and build high-converting landing pages, marketing
-                sites, and product interfaces for SaaS teams — in days, not
-                months.
+                sites, and product interfaces for SaaS teams.
               </motion.p>
 
               <motion.div
@@ -1131,9 +1060,8 @@ export const LandingComponent = () => {
                     alt="arrow right"
                     width={15}
                     height={15}
-                    className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                      !isDarkMode ? "invert" : ""
-                    }`}
+                    className={`group-hover:translate-x-1 transition-transform duration-200 ${!isDarkMode ? "invert" : ""
+                      }`}
                   />
                 </Button>
                 <Button
@@ -1148,9 +1076,8 @@ export const LandingComponent = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className={`text-sm ${
-                  isDarkMode ? "text-slate-500" : "text-slate-400"
-                }`}
+                className={`text-sm ${isDarkMode ? "text-slate-500" : "text-slate-400"
+                  }`}
               >
                 Trusted by 50+ SaaS teams worldwide
               </motion.p>
