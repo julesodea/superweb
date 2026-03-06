@@ -71,8 +71,8 @@ const LandingNav = ({
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors ${isDarkMode
-                    ? "text-slate-400 hover:text-white"
-                    : "text-gray-600 hover:text-gray-900"
+                  ? "text-slate-400 hover:text-white"
+                  : "text-gray-600 hover:text-gray-900"
                   }`}
               >
                 {link.label}
@@ -152,8 +152,8 @@ const LandingNav = ({
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={`block text-sm font-medium py-2 transition-colors ${isDarkMode
-                    ? "text-slate-400 hover:text-white"
-                    : "text-gray-600 hover:text-gray-900"
+                  ? "text-slate-400 hover:text-white"
+                  : "text-gray-600 hover:text-gray-900"
                   }`}
               >
                 {link.label}
@@ -218,8 +218,8 @@ const ProblemSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <SectionWrapper key={index}>
               <div
                 className={`rounded-2xl p-8 md:p-10 ${isDarkMode
-                    ? "bg-slate-800/30"
-                    : "bg-neutral-50"
+                  ? "bg-slate-800/30"
+                  : "bg-neutral-50"
                   }`}
               >
                 <h3
@@ -284,8 +284,8 @@ const SolutionSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           <div className="text-center mb-16">
             <span
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
-                  ? "bg-[#FFC30E] text-black"
-                  : "bg-neutral-100 text-neutral-600"
+                ? "bg-[#FFC30E] text-black"
+                : "bg-neutral-100 text-neutral-600"
                 }`}
             >
               How we solve it
@@ -311,8 +311,8 @@ const SolutionSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <SectionWrapper key={index}>
               <div
                 className={`rounded-2xl p-8 h-full transition-colors ${isDarkMode
-                    ? "bg-slate-800/50 hover:bg-slate-800/80"
-                    : "bg-neutral-50 hover:bg-neutral-100"
+                  ? "bg-slate-800/50 hover:bg-slate-800/80"
+                  : "bg-neutral-50 hover:bg-neutral-100"
                   }`}
               >
                 <span
@@ -380,8 +380,8 @@ const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           <div className="text-center mb-16">
             <span
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
-                  ? "bg-[#FFC30E] text-black"
-                  : "bg-neutral-100 text-neutral-600"
+                ? "bg-[#FFC30E] text-black"
+                : "bg-neutral-100 text-neutral-600"
                 }`}
             >
               Results
@@ -492,8 +492,8 @@ const HowItWorksSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           <div className="text-center mb-16">
             <span
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
-                  ? "bg-[#FFC30E] text-black"
-                  : "bg-neutral-100 text-neutral-600"
+                ? "bg-[#FFC30E] text-black"
+                : "bg-neutral-100 text-neutral-600"
                 }`}
             >
               Process
@@ -579,8 +579,8 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           <div className="text-center mb-16">
             <span
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
-                  ? "bg-[#FFC30E] text-black"
-                  : "bg-neutral-100 text-neutral-600"
+                ? "bg-[#FFC30E] text-black"
+                : "bg-neutral-100 text-neutral-600"
                 }`}
             >
               FAQ
@@ -606,8 +606,8 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                     setOpenIndex(openIndex === index ? null : index)
                   }
                   className={`w-full text-left p-6 flex justify-between items-center gap-4 ${isDarkMode
-                      ? "text-white hover:bg-slate-800/50"
-                      : "text-slate-800 hover:bg-neutral-100"
+                    ? "text-white hover:bg-slate-800/50"
+                    : "text-slate-800 hover:bg-neutral-100"
                     } transition-colors`}
                 >
                   <span className="text-lg font-medium">{faq.question}</span>
@@ -659,7 +659,7 @@ const FinalCTASection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                 }`}
             >
               Go from a site that "looks nice" to one that prints money. Book a
-              free strategy call — we'll show you exactly what's costing you
+              free strategy call. We'll show you exactly what's costing you
               conversions.
             </p>
             <p
@@ -730,8 +730,8 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <div>
               <span
                 className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
-                    ? "bg-[#FFC30E] text-black"
-                    : "bg-neutral-100 text-neutral-600"
+                  ? "bg-[#FFC30E] text-black"
+                  : "bg-neutral-100 text-neutral-600"
                   }`}
               >
                 Contact
@@ -795,8 +795,8 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                       required
                       placeholder="you@company.com"
                       className={`w-full px-4 py-3 rounded-xl border transition focus:outline-none focus:ring-2 ${isDarkMode
-                          ? "bg-slate-800/50 border-slate-700 text-white placeholder-slate-500 focus:ring-slate-500"
-                          : "bg-white border-gray-300 text-slate-800 placeholder-gray-400 focus:ring-slate-400"
+                        ? "bg-slate-800/50 border-slate-700 text-white placeholder-slate-500 focus:ring-slate-500"
+                        : "bg-white border-gray-300 text-slate-800 placeholder-gray-400 focus:ring-slate-400"
                         }`}
                     />
                   </div>
@@ -815,8 +815,8 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                       required
                       placeholder="What are you building? What's the timeline?"
                       className={`w-full px-4 py-3 rounded-xl border min-h-[150px] resize-none transition focus:outline-none focus:ring-2 ${isDarkMode
-                          ? "bg-slate-800/50 border-slate-700 text-white placeholder-slate-500 focus:ring-slate-500"
-                          : "bg-white border-gray-300 text-slate-800 placeholder-gray-400 focus:ring-slate-400"
+                        ? "bg-slate-800/50 border-slate-700 text-white placeholder-slate-500 focus:ring-slate-500"
+                        : "bg-white border-gray-300 text-slate-800 placeholder-gray-400 focus:ring-slate-400"
                         }`}
                     />
                   </div>
