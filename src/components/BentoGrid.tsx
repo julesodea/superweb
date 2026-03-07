@@ -36,11 +36,11 @@ const ChecklistIllustration = () => (
 );
 
 const StepPillsIllustration = () => (
-  <div className="flex flex-col gap-0.5 mt-auto">
+  <div className="flex flex-col gap-0.5 w-full">
     {["Planning", "Launch", "Support"].map((label, i) => (
       <div
         key={label}
-        className="bg-white rounded-full py-2 shadow-sm border border-gray-100 text-sm font-medium text-gray-800 text-center transition-colors duration-300 hover:bg-[#FFC30E] hover:border-[#FFC30E]"
+        className="bg-white rounded-full py-2 shadow-sm border border-gray-100 text-sm font-medium text-gray-800 text-center transition-colors duration-300 hover:bg-amber-200 hover:border-amber-200"
         style={{ width: "33.33%", marginLeft: `${i * 33.33}%` }}
       >
         {label}
@@ -55,7 +55,7 @@ const DonutChartIllustration = () => {
   const circumference = 2 * Math.PI * 80;
 
   return (
-    <div className="relative w-44 h-44 mx-auto mt-auto">
+    <div className="relative w-[132px] h-[132px] mx-auto">
       <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90">
         <circle cx="100" cy="100" r="80" fill="none" stroke="#e5e5e5" strokeWidth="24" />
         <circle
@@ -64,7 +64,7 @@ const DonutChartIllustration = () => {
           cy="100"
           r="80"
           fill="none"
-          stroke="#FFC30E"
+          stroke="#fde68a"
           strokeWidth="24"
           strokeDasharray={`${circumference} ${circumference}`}
           strokeLinecap="round"
@@ -75,7 +75,7 @@ const DonutChartIllustration = () => {
         />
       </svg>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-        <span className="text-4xl font-bold text-gray-800">100%</span>
+        <span className="text-4xl font-bold text-amber-400">100%</span>
       </div>
     </div>
   );
@@ -92,7 +92,7 @@ const BarChartIllustration = () => {
           {bars.map((h, i) => (
             <div
               key={i}
-              className="w-8 bg-gray-200 rounded-lg flex-shrink-0"
+              className="w-8 bg-amber-200 rounded-lg flex-shrink-0"
               style={{ height: h }}
             />
           ))}
@@ -146,7 +146,9 @@ export const BentoGrid = () => {
                 Our focus is on delivering measurable results, whether through high-converting websites, impactful ad campaigns, or engaging content.
               </p>
             </div>
-            <DonutChartIllustration />
+            <div className="flex-1 flex items-center">
+              <DonutChartIllustration />
+            </div>
           </div>
 
           {/* End-to-End Support */}
@@ -157,7 +159,9 @@ export const BentoGrid = () => {
                 From planning to post-launch, we provide full-cycle support, staying by your side every step of the way.
               </p>
             </div>
-            <StepPillsIllustration />
+            <div className="flex-1 flex items-center">
+              <StepPillsIllustration />
+            </div>
           </div>
         </div>
       </div>

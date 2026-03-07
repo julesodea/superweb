@@ -729,7 +729,7 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
     <section id="contact" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <SectionWrapper>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <span
                 className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${isDarkMode
@@ -942,7 +942,7 @@ const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
         </div>
 
         <div
-          className={`mt-8 pt-4 text-center text-xs ${isDarkMode ? "text-slate-600" : "text-neutral-500"
+          className={`mt-8 pt-4 text-left text-xs ${isDarkMode ? "text-slate-600" : "text-neutral-500"
             }`}
         >
           <p>
