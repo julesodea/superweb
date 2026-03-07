@@ -36,12 +36,12 @@ const ChecklistIllustration = () => (
 );
 
 const StepPillsIllustration = () => (
-  <div className="flex flex-col items-end gap-3 mt-auto">
+  <div className="flex flex-col gap-0.5 mt-auto">
     {["Planning", "Launch", "Support"].map((label, i) => (
       <div
         key={label}
-        className="bg-white rounded-full px-8 py-3 shadow-sm border border-gray-100 text-sm font-medium text-gray-800"
-        style={{ marginRight: `${(2 - i) * 2}rem` }}
+        className="bg-white rounded-full py-2 shadow-sm border border-gray-100 text-sm font-medium text-gray-800 text-center transition-colors duration-300 hover:bg-[#FFC30E] hover:border-[#FFC30E]"
+        style={{ width: "33.33%", marginLeft: `${i * 33.33}%` }}
       >
         {label}
       </div>
@@ -53,7 +53,6 @@ const DonutChartIllustration = () => {
   const ref = useRef<SVGCircleElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const circumference = 2 * Math.PI * 80;
-  const target = 0.33 * circumference;
 
   return (
     <div className="relative w-44 h-44 mx-auto mt-auto">
@@ -65,18 +64,18 @@ const DonutChartIllustration = () => {
           cy="100"
           r="80"
           fill="none"
-          stroke="#a3a3a3"
+          stroke="#FFC30E"
           strokeWidth="24"
-          strokeDasharray={`${target} ${circumference}`}
+          strokeDasharray={`${circumference} ${circumference}`}
           strokeLinecap="round"
           style={{
             strokeDashoffset: isInView ? 0 : circumference,
-            transition: "stroke-dashoffset 1.2s ease-out",
+            transition: "stroke-dashoffset 1.5s ease-out",
           }}
         />
       </svg>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-        <span className="text-4xl font-bold text-gray-800">33%</span>
+        <span className="text-4xl font-bold text-gray-800">100%</span>
       </div>
     </div>
   );
@@ -112,7 +111,7 @@ export const BentoGrid = () => {
   return (
     <section className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Top row: Strategies (landscape 3 cols) + Support (portrait 2 cols) */}
+        {/* Top row: Strategies (landscape 3 cols) + Proven Success (portrait 2 cols) */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4">
           {/* Tailored Strategies — landscape, 3 cols */}
           <div className="md:col-span-3 bg-neutral-100 rounded-3xl p-8 flex flex-col md:flex-row md:items-start gap-6 min-h-[420px] overflow-hidden">
@@ -125,34 +124,8 @@ export const BentoGrid = () => {
             <ChecklistIllustration />
           </div>
 
-          {/* End-to-End Support — portrait, 2 cols */}
+          {/* Proven Success — portrait, 2 cols */}
           <div className="md:col-span-2 bg-neutral-100 rounded-3xl p-8 flex flex-col min-h-[420px] overflow-hidden">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">End-to-End Support</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                From planning to post-launch, we provide full-cycle support, staying by your side every step of the way.
-              </p>
-            </div>
-            <div className="flex-1" />
-            <StepPillsIllustration />
-          </div>
-        </div>
-
-        {/* Bottom row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Results-Driven Approach */}
-          <div className="bg-neutral-100 rounded-3xl p-8 flex flex-col min-h-[420px] overflow-hidden">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Results-Driven Approach</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Our focus is on delivering measurable results, whether through high-converting websites, impactful ad campaigns, or engaging content.
-              </p>
-            </div>
-            <DonutChartIllustration />
-          </div>
-
-          {/* Proven Success */}
-          <div className="bg-neutral-100 rounded-3xl p-8 flex flex-col min-h-[420px] overflow-hidden">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Proven Success</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
@@ -160,6 +133,31 @@ export const BentoGrid = () => {
               </p>
             </div>
             <BarChartIllustration />
+          </div>
+        </div>
+
+        {/* Bottom row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Results-Driven Approach */}
+          <div className="bg-neutral-100 rounded-3xl p-6 flex flex-col min-h-[340px] overflow-hidden">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Results-Driven Approach</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Our focus is on delivering measurable results, whether through high-converting websites, impactful ad campaigns, or engaging content.
+              </p>
+            </div>
+            <DonutChartIllustration />
+          </div>
+
+          {/* End-to-End Support */}
+          <div className="bg-neutral-100 rounded-3xl p-6 flex flex-col min-h-[340px] overflow-hidden">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">End-to-End Support</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                From planning to post-launch, we provide full-cycle support, staying by your side every step of the way.
+              </p>
+            </div>
+            <StepPillsIllustration />
           </div>
         </div>
       </div>

@@ -864,12 +864,21 @@ const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
       <div className="mx-auto px-4 sm:px-6 lg:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3
-              className={`text-2xl mb-4 font-bold ${isDarkMode ? "text-white" : "text-neutral-950"
-                }`}
-            >
-              superweb
-            </h3>
+            <div className="flex items-center gap-2 mb-4">
+              <img
+                src="/icon.png"
+                alt="superweb logo"
+                width={28}
+                height={28}
+                className="w-7 h-7"
+              />
+              <h3
+                className={`text-2xl font-bold ${isDarkMode ? "text-white" : "text-neutral-950"
+                  }`}
+              >
+                superweb
+              </h3>
+            </div>
             <p
               className={`text-sm ${isDarkMode ? "text-slate-500" : "text-neutral-600"
                 }`}
@@ -970,7 +979,7 @@ export const LandingComponent = () => {
         <div className="relative z-10">
           <div
             className={`
-              flex justify-start items-center relative m-4 min-h-[80vh] rounded-3xl
+              flex justify-start items-center relative m-4 min-h-[65vh] rounded-3xl
               p-4 sm:p-4 md:p-8 lg:p-16 overflow-hidden
               ${isDarkMode ? "bg-neutral-950" : "bg-gradient-to-br from-neutral-50 to-neutral-100"}
             `}

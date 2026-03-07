@@ -28,7 +28,7 @@ export const Nav = () => {
         }`}
       >
         {/* Logo */}
-        <a href="/" className="flex-shrink-0">
+        <a href="/" className="flex-shrink-0 flex items-center gap-2">
           <img
             src="/icon.png"
             alt="Logo"
@@ -36,6 +36,7 @@ export const Nav = () => {
             height="30"
             className="w-8 h-8"
           />
+          <span className="text-lg font-light text-gray-900">superweb</span>
         </a>
 
         {/* Desktop Navigation Links */}
