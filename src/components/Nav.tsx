@@ -1,106 +1,98 @@
-import { useState } from "react";
-import Button from "./Button";
+import { useState, useEffect } from "react";
 
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { label: "Services", href: "#services" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Testimonials", href: "#testimonials" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "FAQ", href: "#faq" },
+  ];
 
   return (
-    <nav>
-      <div className="sticky top-0 z-90 w-full bg-white/80 backdrop-blur-sm">
-        <div className="mx-4 my-4">
-          <div className="flex items-center justify-between px-2">
-            {/* Logo and Brand */}
-            <a href="/" className="flex items-center">
-              <div className="pr-2">
-                <img
-                  src="/icon.png"
-                  alt="test"
-                  width="30"
-                  height="30"
-                  className="w-8 h-8"
-                />
-              </div>
-              <h1 className="text-xl font-light">superweb</h1>
-            </a>
+    <nav className="sticky top-0 left-0 right-0 z-50 flex justify-center px-4 py-4">
+      <div
+        className={`flex items-center gap-6 rounded-full px-4 py-2 transition-all duration-500 ease-out ${
+          isScrolled
+            ? "bg-white/70 backdrop-blur-xl shadow-lg shadow-black/5 border border-gray-200/50"
+            : "bg-transparent border border-transparent shadow-none"
+        }`}
+      >
+        {/* Logo */}
+        <a href="/" className="flex-shrink-0">
+          <img
+            src="/icon.png"
+            alt="Logo"
+            width="30"
+            height="30"
+            className="w-8 h-8"
+          />
+        </a>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="/"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Products
-              </a>
-              <a
-                href="/component-land"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Resources
-              </a>
-              <a
-                href="/pricing"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Pricing
-              </a>
-            </div>
-
-            {/* Desktop CTA Button */}
-            <div className="hidden md:block">
-              <a href="/contact">
-                <Button className="group" variant="light">
-                  Let's connect{" "}
-                  <img
-                    src="/arrow-right.svg"
-                    alt="arrow right"
-                    width={15}
-                    height={15}
-                    className="group-hover:translate-x-1 transition-transform duration-200"
-                  />
-                </Button>
-              </a>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-gray-600 hover:text-gray-900"
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors whitespace-nowrap"
             >
-              {isMenuOpen ? "CLOSE" : "MENU"}
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="md:hidden border-t border-b py-4 px-2 space-y-4">
-              <a
-                href="/"
-                className="block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2"
-              >
-                Products
-              </a>
-              <a
-                href="/"
-                className="block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2"
-              >
-                Solutions
-              </a>
-              <a
-                href="/component-land"
-                className="block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2"
-              >
-                Resources
-              </a>
-              <a
-                href="/pricing"
-                className="block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2"
-              >
-                Pricing
-              </a>
-            </div>
-          )}
+              {link.label}
+            </a>
+          ))}
         </div>
+
+        {/* Right side: Language + CTA */}
+        <div className="hidden md:flex items-center gap-3">
+          <button className="w-9 h-9 rounded-full border border-gray-200 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-center">
+            En
+          </button>
+          <a
+            href="/contact"
+            className="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors whitespace-nowrap"
+          >
+            Book a call
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden p-2 text-gray-600 hover:text-gray-900"
+        >
+          {isMenuOpen ? "CLOSE" : "MENU"}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-4 right-4 mt-2 md:hidden bg-white/90 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-4 space-y-3 shadow-lg">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="/contact"
+            className="block text-center px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+          >
+            Book a call
+          </a>
+        </div>
+      )}
     </nav>
   );
 };

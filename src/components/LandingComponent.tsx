@@ -1,6 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import Button from "./Button";
 import { motion, useInView } from "framer-motion";
+import { Nav } from "./Nav";
+import LogoBanner from "./Banner";
+import { BentoGrid } from "./BentoGrid";
 
 /* ─── SHARED ─── */
 const SectionWrapper = ({
@@ -944,7 +947,7 @@ const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
 /* ─── MAIN LANDING PAGE ─── */
 export const LandingComponent = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
@@ -960,10 +963,7 @@ export const LandingComponent = () => {
         }`}
     >
       {/* Nav */}
-      <LandingNav
-        isDarkMode={isDarkMode}
-        onToggle={() => setIsDarkMode(!isDarkMode)}
-      />
+      <Nav />
 
       {/* ─── HERO ─── */}
       <section className="relative">
@@ -1086,11 +1086,14 @@ export const LandingComponent = () => {
         </div>
       </section>
 
+      {/* ─── TRUST BAR ─── */}
+      <LogoBanner />
+
       {/* ─── PROBLEM AGITATION ─── */}
       <ProblemSection isDarkMode={isDarkMode} />
 
-      {/* ─── SOLUTION SHOWCASE ─── */}
-      <SolutionSection isDarkMode={isDarkMode} />
+      {/* ─── SOLUTION SHOWCASE (BENTO) ─── */}
+      <BentoGrid />
 
       {/* ─── SOCIAL PROOF ─── */}
       <SocialProofSection isDarkMode={isDarkMode} />
