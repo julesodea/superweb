@@ -605,8 +605,8 @@ const ServicesGridSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
       description: "Clean, production-ready code in React, Webflow, or Framer.",
     },
     {
-      title: "Video Editing",
-      description: "Polished product demos, explainers, and social content.",
+      title: "Analytics & Dashboards",
+      description: "Custom reporting dashboards and data visualization that drive decisions.",
     },
   ];
 
