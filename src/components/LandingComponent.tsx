@@ -543,6 +543,99 @@ const HowItWorksSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   );
 };
 
+/* ─── WHAT WE CREATE ─── */
+const ServicesGridSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
+  const services = [
+    {
+      title: "Website & Landing Page",
+      description: "High-converting pages designed to turn visitors into customers.",
+    },
+    {
+      title: "Brand Systems",
+      description: "Cohesive visual identity that scales with your product.",
+    },
+    {
+      title: "Product Design",
+      description: "Intuitive interfaces that users love and teams ship fast.",
+    },
+    {
+      title: "Growth Assets",
+      description: "Sales decks, one-pagers, and GTM collateral that close deals.",
+    },
+    {
+      title: "Development",
+      description: "Clean, production-ready code in React, Webflow, or Framer.",
+    },
+    {
+      title: "Video Editing",
+      description: "Polished product demos, explainers, and social content.",
+    },
+  ];
+
+  return (
+    <section id="services" className="py-24 px-4">
+      <div className="max-w-6xl mx-auto">
+        <SectionWrapper>
+          <div className="text-center mb-16">
+            <span
+              className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
+                isDarkMode
+                  ? "bg-[#FFC30E] text-black"
+                  : "bg-neutral-100 text-neutral-600"
+              }`}
+            >
+              Services
+            </span>
+            <h2
+              className={`text-4xl md:text-5xl font-bold mb-4 ${
+                isDarkMode ? "text-white" : "text-slate-800"
+              }`}
+            >
+              What We Create
+            </h2>
+            <p
+              className={`text-lg max-w-2xl mx-auto ${
+                isDarkMode ? "text-slate-400" : "text-slate-500"
+              }`}
+            >
+              Everything a SaaS scale-up needs to move faster, convert clearer, and scale profitably.
+            </p>
+          </div>
+        </SectionWrapper>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <SectionWrapper key={index}>
+              <div
+                className={`rounded-2xl p-8 h-full transition-colors ${
+                  isDarkMode
+                    ? "bg-slate-800/30 hover:bg-slate-800/50"
+                    : "bg-neutral-50 hover:bg-neutral-100"
+                }`}
+              >
+                <h3
+                  className={`text-xl font-semibold mb-3 ${
+                    isDarkMode ? "text-white" : "text-slate-800"
+                  }`}
+                >
+                  {service.title}
+                </h3>
+                <p
+                  className={`text-sm leading-relaxed ${
+                    isDarkMode ? "text-slate-400" : "text-slate-500"
+                  }`}
+                >
+                  {service.description}
+                </p>
+              </div>
+            </SectionWrapper>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 /* ─── PRICING ─── */
 const PricingSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   const plans = [
@@ -1014,7 +1107,7 @@ const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
       className={`py-8 mt-auto transition-colors duration-300 ${isDarkMode ? "text-slate-500" : "text-neutral-600"
         }`}
     >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -1129,10 +1222,10 @@ export const LandingComponent = () => {
 
       {/* ─── HERO ─── */}
       <section className="relative">
-        <div className="relative z-10 max-w-[1440px] mx-auto">
+        <div className="relative z-10">
           <div
             className={`
-              flex justify-start items-center relative m-4 min-h-[65vh] rounded-3xl
+              flex justify-center items-center relative m-4 min-h-[65vh] rounded-3xl
               p-4 sm:p-4 md:p-8 lg:p-16 overflow-hidden
               ${isDarkMode ? "bg-neutral-950" : "bg-gradient-to-br from-neutral-50 to-neutral-100"}
             `}
@@ -1184,7 +1277,8 @@ export const LandingComponent = () => {
               `}
             />
 
-            <div className="flex flex-col h-full justify-center align-center items-start gap-6 relative z-10 max-w-3xl">
+            <div className="flex flex-col h-full justify-center align-center items-start gap-6 relative z-10 max-w-3xl mx-auto w-full" style={{ maxWidth: "1152px" }}>
+            <div className="flex flex-col gap-6 max-w-3xl">
               <motion.h1
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -1244,6 +1338,7 @@ export const LandingComponent = () => {
                 Trusted by 50+ SaaS teams worldwide
               </motion.p>
             </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1253,6 +1348,9 @@ export const LandingComponent = () => {
 
       {/* ─── PROBLEM AGITATION ─── */}
       <ProblemSection isDarkMode={isDarkMode} />
+
+      {/* ─── WHAT WE CREATE ─── */}
+      <ServicesGridSection isDarkMode={isDarkMode} />
 
       {/* ─── SOLUTION SHOWCASE (BENTO) ─── */}
       <BentoGrid />
