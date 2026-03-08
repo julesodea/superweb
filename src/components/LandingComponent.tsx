@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Button from "./Button";
-import { motion, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { Nav } from "./Nav";
 import LogoBanner from "./Banner";
 import { BentoGrid } from "./BentoGrid";
@@ -915,18 +915,26 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                     +
                   </span>
                 </button>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    transition={{ duration: 0.2 }}
-                    className={`px-6 pt-2 pb-6 ${
-                      isDarkMode ? "text-slate-400" : "text-slate-500"
-                    }`}
-                  >
-                    <p className="leading-relaxed">{faq.answer}</p>
-                  </motion.div>
-                )}
+                <AnimatePresence initial={false}>
+                  {openIndex === index && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      style={{ overflow: "hidden" }}
+                    >
+                      <div
+                        className={`px-6 pt-2 pb-6 ${
+                          isDarkMode ? "text-slate-400" : "text-slate-500"
+                        }`}
+                      >
+                        <p className="leading-relaxed">{faq.answer}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </SectionWrapper>
           ))}
