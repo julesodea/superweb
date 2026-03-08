@@ -194,15 +194,15 @@ const ProblemSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   const pains = [
     {
       headline: "Your website looks fine but doesn't convert",
-      body: "You spent thousands on a beautiful site. Traffic comes in, but leads don't. Visitors scroll, shrug, and leave. The design isn't the problem — the strategy is.",
+      body: "You spent thousands on a beautiful site. Traffic comes in, but leads don't. Visitors scroll, shrug, and leave. The design isn't the problem - the strategy is.",
     },
     {
       headline: "You're stuck in revision hell",
-      body: "Three months in. Twelve rounds of feedback. The agency still doesn't get your vision. You're paying for time, not outcomes — and you're running out of both.",
+      body: "Three months in. Twelve rounds of feedback. The agency still doesn't get your vision. You're paying for time, not outcomes - and you're running out of both.",
     },
     {
       headline: "Your competitors are shipping faster than you",
-      body: "While you're debating font sizes, they launched two new features. Speed isn't a luxury anymore — it's survival. And your current process is too slow.",
+      body: "While you're debating font sizes, they launched two new features. Speed isn't a luxury anymore - it's survival. And your current process is too slow.",
     },
   ];
 
@@ -282,7 +282,7 @@ const SolutionSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
     {
       title: "Full Stack Build",
       benefit:
-        "Design, development, and deployment — one team, one timeline, one invoice.",
+        "Design, development, and deployment - one team, one timeline, one invoice.",
       icon: "03",
     },
   ];
@@ -313,7 +313,7 @@ const SolutionSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                 isDarkMode ? "text-slate-400" : "text-slate-500"
               }`}
             >
-              We focus exclusively on SaaS — so every decision we make is
+              We focus exclusively on SaaS - so every decision we make is
               informed by what actually s in your market.
             </p>
           </div>
@@ -834,17 +834,17 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
     {
       question: "Is Superweb right for my project?",
       answer:
-        "We work exclusively with SaaS companies and digital product teams. If you're building a software product and need a high-ing web presence — landing pages, marketing sites, or product interfaces — we're your team. If you need a blog or brochure site, we're probably not the best fit.",
+        "We work exclusively with SaaS companies and digital product teams. If you're building a software product and need a high-ing web presence - landing pages, marketing sites, or product interfaces - we're your team. If you need a blog or brochure site, we're probably not the best fit.",
     },
     {
       question: "What if I don't like the design?",
       answer:
-        "Every project includes two full rounds of revisions. We start with a strategy call so we're aligned before a single pixel is placed. In 50+ projects, we've never had a client walk away unhappy — but if you're not satisfied after revisions, we'll refund the project fee. No questions.",
+        "Every project includes two full rounds of revisions. We start with a strategy call so we're aligned before a single pixel is placed. In 50+ projects, we've never had a client walk away unhappy - but if you're not satisfied after revisions, we'll refund the project fee. No questions.",
     },
     {
       question: "Why Superweb over a full-service agency?",
       answer:
-        "Agencies spread thin across industries. We go deep on one: SaaS. That means we already know what converts in your market, what patterns your users expect, and what mistakes to avoid. You're not paying for us to learn — you're paying for what we already know.",
+        "Agencies spread thin across industries. We go deep on one: SaaS. That means we already know what converts in your market, what patterns your users expect, and what mistakes to avoid. You're not paying for us to learn - you're paying for what we already know.",
     },
     {
       question: "How fast can you deliver?",
