@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const Nav = () => {
+export const Nav = ({ isDarkMode, onToggle }: { isDarkMode?: boolean; onToggle?: () => void } = {}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -12,11 +12,14 @@ export const Nav = () => {
 
   const navLinks = [
     { label: "Services", href: "#services" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Pricing", href: "/pricing" },
+    { label: "Results", href: "#results" },
+    { label: "Process", href: "#process" },
+    { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
   ];
+
+  // Light text only when not scrolled AND in dark mode
+  const useLight = !isScrolled && isDarkMode;
 
   return (
     <nav className="sticky top-0 left-0 right-0 z-50 flex justify-center px-4 py-4">
@@ -36,7 +39,9 @@ export const Nav = () => {
             height="30"
             className="w-8 h-8"
           />
-          <span className="text-lg font-light text-gray-900">superweb</span>
+          <span className={`text-lg font-light transition-colors duration-500 ${
+            useLight ? "text-white" : "text-gray-900"
+          }`}>superweb</span>
         </a>
 
         {/* Desktop Navigation Links */}
@@ -45,21 +50,39 @@ export const Nav = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors whitespace-nowrap"
+              className={`text-sm font-medium transition-colors duration-500 whitespace-nowrap ${
+                useLight
+                  ? "text-white/80 hover:text-white"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* Right side: Language + CTA */}
+        {/* Right side: Toggle + CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <button className="w-9 h-9 rounded-full border border-gray-200 bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-center">
-            En
-          </button>
+          {onToggle && (
+            <label className="inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                checked={isDarkMode}
+                onChange={onToggle}
+                className="sr-only peer"
+              />
+              <div className={`relative w-11 h-6 rounded-full peer after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full peer-checked:after:border-white ${
+                useLight ? "bg-white/30 peer-checked:bg-white/50" : "bg-gray-200 peer-checked:bg-gray-600"
+              }`} />
+            </label>
+          )}
           <a
-            href="/contact"
-            className="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors whitespace-nowrap"
+            href="#contact"
+            className={`px-5 py-2.5 text-sm font-medium rounded-full transition-colors duration-500 whitespace-nowrap ${
+              useLight
+                ? "bg-white text-gray-900 hover:bg-white/90"
+                : "bg-gray-900 text-white hover:bg-gray-800"
+            }`}
           >
             Book a call
           </a>
@@ -68,7 +91,9 @@ export const Nav = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden p-2 text-gray-600 hover:text-gray-900"
+          className={`md:hidden p-2 transition-colors duration-500 ${
+            useLight ? "text-white/80 hover:text-white" : "text-gray-600 hover:text-gray-900"
+          }`}
         >
           {isMenuOpen ? "CLOSE" : "MENU"}
         </button>
@@ -81,13 +106,15 @@ export const Nav = () => {
             <a
               key={link.label}
               href={link.href}
+              onClick={() => setIsMenuOpen(false)}
               className="block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2"
             >
               {link.label}
             </a>
           ))}
           <a
-            href="/contact"
+            href="#contact"
+            onClick={() => setIsMenuOpen(false)}
             className="block text-center px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
           >
             Book a call
