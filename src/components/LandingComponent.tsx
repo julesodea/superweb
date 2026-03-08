@@ -112,9 +112,7 @@ const LandingNav = ({
                   alt="arrow right"
                   width={15}
                   height={15}
-                  className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                    !isDarkMode ? "invert" : ""
-                  }`}
+                  className="group-hover:translate-x-1 transition-transform duration-200"
                 />
               </Button>
             </a>
@@ -180,9 +178,7 @@ const LandingNav = ({
                   alt="arrow right"
                   width={15}
                   height={15}
-                  className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                    !isDarkMode ? "invert" : ""
-                  }`}
+                  className="group-hover:translate-x-1 transition-transform duration-200"
                 />
               </Button>
             </a>
@@ -300,7 +296,7 @@ const SolutionSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
                   ? "bg-[#FCD34D] text-black"
-                  : "bg-neutral-100 text-neutral-600"
+                  : "bg-[#FCD34D] text-black"
               }`}
             >
               How we solve it
@@ -400,7 +396,7 @@ const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
                   ? "bg-[#FCD34D] text-black"
-                  : "bg-neutral-100 text-neutral-600"
+                  : "bg-[#FCD34D] text-black"
               }`}
             >
               Results
@@ -532,7 +528,7 @@ const HowItWorksSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
                   ? "bg-[#FCD34D] text-black"
-                  : "bg-neutral-100 text-neutral-600"
+                  : "bg-[#FCD34D] text-black"
               }`}
             >
               Process
@@ -623,7 +619,7 @@ const ServicesGridSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
                   ? "bg-[#FCD34D] text-black"
-                  : "bg-neutral-100 text-neutral-600"
+                  : "bg-[#FCD34D] text-black"
               }`}
             >
               Services
@@ -719,7 +715,7 @@ const PricingSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
                   ? "bg-[#FCD34D] text-black"
-                  : "bg-neutral-100 text-neutral-600"
+                  : "bg-[#FCD34D] text-black"
               }`}
             >
               Pricing
@@ -817,9 +813,7 @@ const PricingSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                       alt="arrow right"
                       width={15}
                       height={15}
-                      className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                        !isDarkMode ? "invert" : ""
-                      }`}
+                      className="group-hover:translate-x-1 transition-transform duration-200"
                     />
                   </Button>
                 </div>
@@ -873,7 +867,7 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
                   ? "bg-[#FCD34D] text-black"
-                  : "bg-neutral-100 text-neutral-600"
+                  : "bg-[#FCD34D] text-black"
               }`}
             >
               FAQ
@@ -986,9 +980,7 @@ const FinalCTASection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                   alt="arrow right"
                   width={15}
                   height={15}
-                  className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                    !isDarkMode ? "invert" : ""
-                  }`}
+                  className="group-hover:translate-x-1 transition-transform duration-200"
                 />
               </Button>
             </div>
@@ -1044,7 +1036,7 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                 className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                   isDarkMode
                     ? "bg-[#FCD34D] text-black"
-                    : "bg-neutral-100 text-neutral-600"
+                    : "bg-[#FCD34D] text-black"
                 }`}
               >
                 Contact
@@ -1154,9 +1146,7 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                       alt="arrow right"
                       width={15}
                       height={15}
-                      className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                        !isDarkMode ? "invert" : ""
-                      }`}
+                      className="group-hover:translate-x-1 transition-transform duration-200"
                     />
                   </Button>
                 </form>
@@ -1405,9 +1395,7 @@ export const LandingComponent = () => {
                       alt="arrow right"
                       width={15}
                       height={15}
-                      className={`group-hover:translate-x-1 transition-transform duration-200 ${
-                        !isDarkMode ? "invert" : ""
-                      }`}
+                      className="group-hover:translate-x-1 transition-transform duration-200"
                     />
                   </Button>
                   <Button
