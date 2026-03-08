@@ -1,11 +1,11 @@
 <svg width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <circle cx="62.1323" cy="62.1318" r="45.1125" transform="rotate(23.1602 62.1323 62.1318)" fill="white"/>
-<line x1="65.6831" y1="59.5767" x2="57.0062" y2="80.8005" stroke="#FDE68A" stroke-width="6"/>
-<line x1="68.8744" y1="45.5319" x2="48.8752" y2="61.7557" stroke="#FDE68A" stroke-width="6"/>
-<line x1="76.3765" y1="67.1399" x2="50.3761" y2="61.7603" stroke="#FDE68A" stroke-width="6"/>
-<line x1="74.3203" y1="65.6983" x2="56.3205" y2="53.6984" stroke="#FDE68A" stroke-width="6"/>
-<line x1="64.6997" y1="73.7623" x2="52.5059" y2="55.8933" stroke="#FDE68A" stroke-width="6"/>
-<line x1="69.6013" y1="72.0246" x2="56.6007" y2="55.0245" stroke="#FDE68A" stroke-width="6"/>
+<line x1="65.6831" y1="59.5767" x2="57.0062" y2="80.8005" stroke="#FCD34D" stroke-width="6"/>
+<line x1="68.8744" y1="45.5319" x2="48.8752" y2="61.7557" stroke="#FCD34D" stroke-width="6"/>
+<line x1="76.3765" y1="67.1399" x2="50.3761" y2="61.7603" stroke="#FCD34D" stroke-width="6"/>
+<line x1="74.3203" y1="65.6983" x2="56.3205" y2="53.6984" stroke="#FCD34D" stroke-width="6"/>
+<line x1="64.6997" y1="73.7623" x2="52.5059" y2="55.8933" stroke="#FCD34D" stroke-width="6"/>
+<line x1="69.6013" y1="72.0246" x2="56.6007" y2="55.0245" stroke="#FCD34D" stroke-width="6"/>
 <rect x="37.2305" width="94.6622" height="94.6622" transform="rotate(23.1602 37.2305 0)" fill="url(#pattern0_1188_8)"/>
 <defs>
 <pattern id="pattern0_1188_8" patternContentUnits="objectBoundingBox" width="1" height="1">

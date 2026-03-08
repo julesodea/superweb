@@ -12,8 +12,12 @@ const ChecklistIllustration = () => (
         <div className="h-2 w-16 bg-gray-100 rounded" />
         <div className="ml-auto h-6 w-14 bg-gray-100 rounded-md" />
       </div>
-      <h4 className="text-sm font-semibold text-gray-800 mt-3">Your incredible project</h4>
-      <p className="text-[10px] text-gray-400 mb-3">Individual development strategy</p>
+      <h4 className="text-sm font-semibold text-gray-800 mt-3">
+        Your incredible project
+      </h4>
+      <p className="text-[10px] text-gray-400 mb-3">
+        Individual development strategy
+      </p>
       {[
         "Business goal analysis",
         "Custom design development",
@@ -22,10 +26,23 @@ const ChecklistIllustration = () => (
         "Performance tracking",
         "User experience optimization",
       ].map((item, i) => (
-        <div key={i} className={`flex items-center gap-2.5 py-1.5 ${i >= 4 ? "opacity-40" : ""}`}>
-          <div className="w-5 h-5 rounded-full bg-amber-50 flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover/cards:bg-amber-100">
-            <svg className="w-3 h-3 text-amber-400 transition-colors duration-300 group-hover/cards:text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+        <div
+          key={i}
+          className={`flex items-center gap-2.5 py-1.5 ${i >= 4 ? "opacity-40" : ""}`}
+        >
+          <div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover/cards:bg-amber-100">
+            <svg
+              className="w-3 h-3 text-amber-400 transition-colors duration-300 group-hover/cards:text-amber-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 13l4 4L19 7"
+              />
             </svg>
           </div>
           <span className="text-xs text-gray-500">{item}</span>
@@ -40,7 +57,7 @@ const StepPillsIllustration = () => (
     {["Planning", "Launch", "Support"].map((label, i) => (
       <div
         key={label}
-        className="bg-white rounded-full py-2 shadow-sm border border-gray-100 text-sm font-medium text-gray-800 text-center transition-colors duration-300 hover:bg-amber-200 hover:border-amber-200"
+        className="bg-white rounded-full py-2 shadow-sm border border-gray-100 text-sm font-medium text-gray-800 text-center transition-colors duration-300 hover:bg-amber-300 hover:border-amber-200"
         style={{ width: "33.33%", marginLeft: `${i * 33.33}%` }}
       >
         {label}
@@ -57,14 +74,21 @@ const DonutChartIllustration = () => {
   return (
     <div className="relative w-[132px] h-[132px] mx-auto">
       <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90">
-        <circle cx="100" cy="100" r="80" fill="none" stroke="#e5e5e5" strokeWidth="24" />
+        <circle
+          cx="100"
+          cy="100"
+          r="80"
+          fill="none"
+          stroke="#e5e5e5"
+          strokeWidth="24"
+        />
         <circle
           ref={ref}
           cx="100"
           cy="100"
           r="80"
           fill="none"
-          stroke="#fde68a"
+          stroke="#FCD34D"
           strokeWidth="24"
           strokeDasharray={`${circumference} ${circumference}`}
           strokeLinecap="round"
@@ -88,18 +112,23 @@ const BarChartIllustration = () => {
   return (
     <div className="mt-auto flex justify-center">
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 w-full max-w-[280px]">
-        <div className="flex items-end justify-center gap-5 mb-3" style={{ height: 120 }}>
+        <div
+          className="flex items-end justify-center gap-5 mb-3"
+          style={{ height: 120 }}
+        >
           {bars.map((h, i) => (
             <div
               key={i}
-              className="w-8 bg-amber-200 rounded-lg flex-shrink-0"
+              className="w-8 bg-amber-300 rounded-lg flex-shrink-0"
               style={{ height: h }}
             />
           ))}
         </div>
         <div className="flex justify-center gap-5">
           {months.map((m) => (
-            <span key={m} className="text-[11px] text-gray-400 w-8 text-center">{m}</span>
+            <span key={m} className="text-[11px] text-gray-400 w-8 text-center">
+              {m}
+            </span>
           ))}
         </div>
       </div>
@@ -116,9 +145,12 @@ export const BentoGrid = () => {
           {/* Tailored Strategies — landscape, 3 cols */}
           <div className="md:col-span-3 bg-neutral-100 rounded-3xl p-8 flex flex-col md:flex-row md:items-start gap-6 min-h-[420px] overflow-hidden">
             <div className="flex-shrink-0 md:max-w-[280px]">
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Tailored Strategies</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Tailored Strategies
+              </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                We customize every project to your specific business goals, ensuring solutions that fit your unique needs.
+                We customize every project to your specific business goals,
+                ensuring solutions that fit your unique needs.
               </p>
             </div>
             <ChecklistIllustration />
@@ -127,9 +159,12 @@ export const BentoGrid = () => {
           {/* Proven Success — portrait, 2 cols */}
           <div className="md:col-span-2 bg-neutral-100 rounded-3xl p-8 flex flex-col min-h-[420px] overflow-hidden">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Proven Success</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Proven Success
+              </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                We've helped brands grow their digital presence and achieve measurable success. Let us help you do the same!
+                We've helped brands grow their digital presence and achieve
+                measurable success. Let us help you do the same!
               </p>
             </div>
             <BarChartIllustration />
@@ -141,9 +176,13 @@ export const BentoGrid = () => {
           {/* Results-Driven Approach */}
           <div className="bg-neutral-100 rounded-3xl p-6 flex flex-col min-h-[340px] overflow-hidden">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Results-Driven Approach</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Results-Driven Approach
+              </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Our focus is on delivering measurable results, whether through high-converting websites, impactful ad campaigns, or engaging content.
+                Our focus is on delivering measurable results, whether through
+                high-converting websites, impactful ad campaigns, or engaging
+                content.
               </p>
             </div>
             <div className="flex-1 flex items-center">
@@ -154,9 +193,12 @@ export const BentoGrid = () => {
           {/* End-to-End Support */}
           <div className="bg-neutral-100 rounded-3xl p-6 flex flex-col min-h-[340px] overflow-hidden">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">End-to-End Support</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                End-to-End Support
+              </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                From planning to post-launch, we provide full-cycle support, staying by your side every step of the way.
+                From planning to post-launch, we provide full-cycle support,
+                staying by your side every step of the way.
               </p>
             </div>
             <div className="flex-1 flex items-center">

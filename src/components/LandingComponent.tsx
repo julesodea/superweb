@@ -299,7 +299,7 @@ const SolutionSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <span
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
-                  ? "bg-[#FDE68A] text-black"
+                  ? "bg-[#FCD34D] text-black"
                   : "bg-neutral-100 text-neutral-600"
               }`}
             >
@@ -399,7 +399,7 @@ const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <span
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
-                  ? "bg-[#FDE68A] text-black"
+                  ? "bg-[#FCD34D] text-black"
                   : "bg-neutral-100 text-neutral-600"
               }`}
             >
@@ -417,10 +417,23 @@ const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
         <SectionWrapper>
           <div
-            className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 rounded-2xl p-8 ${
+            className={`relative overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 rounded-2xl p-8 ${
               isDarkMode ? "bg-slate-800/50" : "bg-neutral-50"
             }`}
           >
+            {/* Grid pattern overlay */}
+            <div className="absolute inset-0 pointer-events-none opacity-50">
+              <div
+                className={`
+                  absolute inset-0 bg-[size:3rem_3rem]
+                  ${
+                    isDarkMode
+                      ? "bg-[linear-gradient(to_right,#64748b20_1px,transparent_1px),linear-gradient(to_bottom,#64748b20_1px,transparent_1px)]"
+                      : "bg-[linear-gradient(to_right,#4b5563_1px,transparent_1px),linear-gradient(to_bottom,#4b5563_1px,transparent_1px)] opacity-[0.08]"
+                  }
+                `}
+              />
+            </div>
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div
@@ -518,7 +531,7 @@ const HowItWorksSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <span
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
-                  ? "bg-[#FDE68A] text-black"
+                  ? "bg-[#FCD34D] text-black"
                   : "bg-neutral-100 text-neutral-600"
               }`}
             >
@@ -609,7 +622,7 @@ const ServicesGridSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <span
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
-                  ? "bg-[#FDE68A] text-black"
+                  ? "bg-[#FCD34D] text-black"
                   : "bg-neutral-100 text-neutral-600"
               }`}
             >
@@ -705,7 +718,7 @@ const PricingSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <span
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
-                  ? "bg-[#FDE68A] text-black"
+                  ? "bg-[#FCD34D] text-black"
                   : "bg-neutral-100 text-neutral-600"
               }`}
             >
@@ -767,9 +780,9 @@ const PricingSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                 <ul className="space-y-2.5 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <div className="w-5 h-5 rounded-full bg-amber-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg
-                          className="w-3 h-3 text-amber-400"
+                          className="w-3 h-3 text-slate-800"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -859,7 +872,7 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <span
               className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                 isDarkMode
-                  ? "bg-[#FDE68A] text-black"
+                  ? "bg-[#FCD34D] text-black"
                   : "bg-neutral-100 text-neutral-600"
               }`}
             >
@@ -1022,7 +1035,7 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
               <span
                 className={`inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium ${
                   isDarkMode
-                    ? "bg-[#FDE68A] text-black"
+                    ? "bg-[#FCD34D] text-black"
                     : "bg-neutral-100 text-neutral-600"
                 }`}
               >

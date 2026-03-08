@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     light: "bg-slate-100 text-slate-800",
-    dark: "bg-slate-800 text-white",
+    dark: "bg-amber-300 text-slate-800",
   };
 
   const Tag = href ? "a" : "button";
