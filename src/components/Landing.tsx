@@ -43,7 +43,7 @@ export const LandingComponent = () => {
             className={`
               flex justify-center items-center relative m-4 min-h-[65vh] rounded-3xl
               p-4 sm:p-4 md:p-8 lg:p-16 overflow-hidden
-              ${isDarkMode ? "bg-neutral-950" : "bg-gradient-to-br from-neutral-50 to-neutral-100"}
+              ${isDarkMode ? "bg-neutral-950" : "bg-linear-to-br from-neutral-50 to-neutral-100"}
             `}
           >
             {/* Animated gradient background */}
@@ -52,17 +52,17 @@ export const LandingComponent = () => {
                 absolute inset-0 animate-gradient
                 ${
                   isDarkMode
-                    ? "bg-gradient-to-br from-slate-800/20 via-slate-700/20 to-slate-800/20"
-                    : "bg-gradient-to-br from-neutral-100/40 via-neutral-100/40 to-neutral-100/40"
+                    ? "bg-linear-to-br from-slate-800/20 via-slate-700/20 to-slate-800/20"
+                    : "bg-linear-to-br from-neutral-100/40 via-neutral-100/40 to-neutral-100/40"
                 }
               `}
             />
 
             {/* Grid pattern overlay */}
-            <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black)]">
+            <div className="absolute inset-0 mask-[linear-gradient(to_bottom,transparent,black)]">
               <div
                 className={`
-                  absolute inset-0 bg-[size:4rem_4rem]
+                  absolute inset-0 bg-size-[4rem_4rem]
                   ${
                     isDarkMode
                       ? "bg-[linear-gradient(to_right,#64748b20_1px,transparent_1px),linear-gradient(to_bottom,#64748b20_1px,transparent_1px)]"
@@ -130,7 +130,10 @@ export const LandingComponent = () => {
                   transition={{ duration: 0.5, delay: 0.5 }}
                   className="flex flex-col sm:flex-row gap-3"
                 >
-                  <Button href="#contact" variant={isDarkMode ? "light" : "dark"}>
+                  <Button
+                    href="#contact"
+                    variant={isDarkMode ? "light" : "dark"}
+                  >
                     Book a free strategy call
                     <img
                       src="/arrow-right.svg"
@@ -140,7 +143,10 @@ export const LandingComponent = () => {
                       className="group-hover:translate-x-1 transition-transform duration-200"
                     />
                   </Button>
-                  <Button href="#process" variant={isDarkMode ? "dark" : "light"}>
+                  <Button
+                    href="#process"
+                    variant={isDarkMode ? "dark" : "light"}
+                  >
                     See how it works
                   </Button>
                 </motion.div>

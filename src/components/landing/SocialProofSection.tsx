@@ -59,7 +59,7 @@ const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <div className="absolute inset-0 pointer-events-none opacity-50">
               <div
                 className={`
-                  absolute inset-0 bg-[size:3rem_3rem]
+                  absolute inset-0 bg-size-[3rem_3rem]
                   ${
                     isDarkMode
                       ? "bg-[linear-gradient(to_right,#64748b20_1px,transparent_1px),linear-gradient(to_bottom,#64748b20_1px,transparent_1px)]"
@@ -77,7 +77,9 @@ const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                 >
                   {stat.number}
                 </div>
-                <div className={isDarkMode ? "text-slate-400" : "text-slate-500"}>
+                <div
+                  className={isDarkMode ? "text-slate-400" : "text-slate-500"}
+                >
                   {stat.label}
                 </div>
               </div>
