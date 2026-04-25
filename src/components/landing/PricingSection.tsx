@@ -32,72 +32,84 @@ const plans = [
 
 const PricingSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
-    <section id="pricing" className="py-24 px-4">
-      <div className="max-w-5xl mx-auto">
+    <section id="pricing" className="px-4 py-28">
+      <div className="mx-auto max-w-6xl">
         <SectionWrapper>
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-[#FCD34D] text-black">
+          <div className="mb-16 grid gap-6 md:grid-cols-[0.85fr_1.15fr] md:items-end">
+            <span className="inline-block w-fit rounded-md bg-[#e8bd3f] px-3 py-1.5 text-sm font-black text-[#101113]">
               Pricing
             </span>
-            <h2
-              className={`text-4xl md:text-5xl font-bold mb-4 ${
-                isDarkMode ? "text-white" : "text-slate-800"
-              }`}
-            >
-              One partner. Two ways to work together.
-            </h2>
-            <p
-              className={`text-lg max-w-2xl mx-auto ${
-                isDarkMode ? "text-slate-400" : "text-slate-500"
-              }`}
-            >
-              No hiring headaches.
-            </p>
+            <div>
+              <h2
+                className={`text-balance text-4xl font-black leading-none md:text-6xl ${
+                  isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
+                }`}
+              >
+                One partner. Two clean ways to work.
+              </h2>
+              <p
+                className={`mt-5 max-w-2xl text-lg leading-8 ${
+                  isDarkMode ? "text-[#f6f3ec]/58" : "text-[#101113]/62"
+                }`}
+              >
+                Pick a focused launch sprint or keep a small product-ready team
+                on call.
+              </p>
+            </div>
           </div>
         </SectionWrapper>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {plans.map((plan, index) => (
-            <SectionWrapper key={index}>
+            <SectionWrapper key={index} delay={index * 0.08}>
               <div
-                className={`rounded-2xl p-8 h-full flex flex-col ${
-                  isDarkMode ? "bg-slate-800/30" : "bg-neutral-50"
+                className={`relative flex h-full flex-col rounded-xl p-7 transition-transform duration-300 hover:-translate-y-1 md:p-8 ${
+                  index === 1
+                    ? "border border-[#e8bd3f]/45 bg-[#e8bd3f]/10"
+                    : isDarkMode
+                      ? "border border-white/8 bg-white/[0.04]"
+                      : "border border-[#101113]/8 bg-white/50"
                 }`}
               >
+                {index === 1 && (
+                  <span className="mb-5 w-fit rounded-md bg-[#e8bd3f] px-2.5 py-1 text-xs font-black text-[#101113]">
+                    Best for ongoing teams
+                  </span>
+                )}
                 <h3
-                  className={`text-2xl font-semibold mb-1 ${
-                    isDarkMode ? "text-white" : "text-slate-800"
+                  className={`mb-1 text-3xl font-black ${
+                    isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
                   }`}
                 >
                   {plan.name}
                 </h3>
                 <span
-                  className={`text-sm font-medium mb-4 ${
-                    isDarkMode ? "text-slate-500" : "text-slate-400"
+                  className={`mb-5 text-sm font-semibold ${
+                    isDarkMode ? "text-[#f6f3ec]/44" : "text-[#101113]/50"
                   }`}
                 >
                   {plan.type}
                 </span>
                 <p
-                  className={`text-base mb-6 ${
-                    isDarkMode ? "text-slate-300" : "text-slate-600"
+                  className={`mb-8 min-h-16 leading-7 ${
+                    isDarkMode ? "text-[#f6f3ec]/64" : "text-[#101113]/66"
                   }`}
                 >
                   {plan.description}
                 </p>
                 <p
-                  className={`text-xs font-semibold uppercase tracking-wider mb-3 ${
-                    isDarkMode ? "text-slate-500" : "text-slate-400"
+                  className={`mb-4 text-xs font-black ${
+                    isDarkMode ? "text-[#f6f3ec]/44" : "text-[#101113]/48"
                   }`}
                 >
                   What's included:
                 </p>
-                <ul className="space-y-2.5 mb-8">
+                <ul className="mb-8 space-y-3">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-md bg-[#e8bd3f]">
                         <svg
-                          className="w-3 h-3 text-slate-800"
+                          className="h-3 w-3 text-[#101113]"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -112,7 +124,7 @@ const PricingSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                       </div>
                       <span
                         className={`text-sm ${
-                          isDarkMode ? "text-slate-300" : "text-slate-600"
+                          isDarkMode ? "text-[#f6f3ec]/68" : "text-[#101113]/68"
                         }`}
                       >
                         {feature}
@@ -123,7 +135,7 @@ const PricingSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                 <div className="mt-auto">
                   <Button
                     href="#contact"
-                    variant={isDarkMode ? "light" : "dark"}
+                    variant={index === 1 ? "dark" : isDarkMode ? "light" : "ghost"}
                     className="w-full"
                   >
                     Book an intro call

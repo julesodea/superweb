@@ -1,33 +1,37 @@
 const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
     <footer
-      className={`py-8 px-4 mt-auto transition-colors duration-300 ${
-        isDarkMode ? "text-slate-500" : "text-neutral-600"
+      className={`mt-auto px-4 py-10 transition-colors duration-300 ${
+        isDarkMode ? "text-[#f6f3ec]/48" : "text-[#101113]/58"
       }`}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div
+        className={`mx-auto max-w-6xl border-t pt-8 ${
+          isDarkMode ? "border-white/8" : "border-[#101113]/10"
+        }`}
+      >
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
                 src="/icon.png"
-                alt="superweb logo"
+                alt=""
                 width={28}
                 height={28}
                 className="w-7 h-7"
               />
               <h3
-                className={`text-2xl font-bold ${
-                  isDarkMode ? "text-white" : "text-neutral-950"
+                className={`text-2xl font-black ${
+                  isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
                 }`}
               >
                 superweb
               </h3>
             </div>
             <p
-              className={`text-sm ${
-                isDarkMode ? "text-slate-500" : "text-neutral-600"
-              }`}
+                className={`max-w-xs text-sm leading-6 ${
+                  isDarkMode ? "text-[#f6f3ec]/48" : "text-[#101113]/58"
+                }`}
             >
               We make the web a super place for the future.
             </p>
@@ -35,29 +39,29 @@ const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
           <div>
             <h3
-              className={`text-lg font-semibold mb-4 ${
-                isDarkMode ? "text-slate-300" : "text-neutral-800"
+              className={`mb-4 text-sm font-black ${
+                isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
               }`}
             >
-              Quick Links
+              Navigation
             </h3>
             <ul
               className={`space-y-2 text-sm ${
-                isDarkMode ? "text-slate-500" : "text-neutral-600"
+                isDarkMode ? "text-[#f6f3ec]/48" : "text-[#101113]/58"
               }`}
             >
               <li>
-                <a href="#services" className="hover:underline transition-colors">
+                <a href="#services" className="transition-colors hover:text-[#e8bd3f]">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#results" className="hover:underline transition-colors">
+                <a href="#results" className="transition-colors hover:text-[#e8bd3f]">
                   Results
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:underline transition-colors">
+                <a href="#contact" className="transition-colors hover:text-[#e8bd3f]">
                   Contact
                 </a>
               </li>
@@ -66,15 +70,15 @@ const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
           <div>
             <h3
-              className={`text-lg font-semibold mb-4 ${
-                isDarkMode ? "text-slate-300" : "text-neutral-800"
+              className={`mb-4 text-sm font-black ${
+                isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
               }`}
             >
               Contact Us
             </h3>
             <ul
               className={`space-y-2 text-sm ${
-                isDarkMode ? "text-slate-500" : "text-neutral-600"
+                isDarkMode ? "text-[#f6f3ec]/48" : "text-[#101113]/58"
               }`}
             >
               <li>Email: hi@superweb.co</li>
@@ -84,7 +88,7 @@ const LandingFooter = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
         <div
           className={`mt-8 pt-4 text-left text-xs ${
-            isDarkMode ? "text-slate-600" : "text-neutral-500"
+            isDarkMode ? "text-[#f6f3ec]/34" : "text-[#101113]/42"
           }`}
         >
           <p>&copy; {new Date().getFullYear()} superweb. All rights reserved.</p>

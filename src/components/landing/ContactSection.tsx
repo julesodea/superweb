@@ -7,7 +7,10 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
     "idle" | "submitting" | "success" | "error"
   >("idle");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: {
+    preventDefault: () => void;
+    currentTarget: HTMLFormElement;
+  }) => {
     e.preventDefault();
     setStatus("submitting");
 
@@ -30,35 +33,42 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="px-4 py-28">
+      <div className="mx-auto max-w-6xl">
         <SectionWrapper>
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div
+            className={`grid gap-10 rounded-xl p-6 md:grid-cols-[0.9fr_1.1fr] md:p-10 ${
+              isDarkMode
+                ? "border border-white/8 bg-white/[0.04]"
+                : "border border-[#101113]/8 bg-white/55"
+            }`}
+          >
             <div>
-              <span className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-[#FCD34D] text-black">
+              <span className="mb-6 inline-block rounded-md bg-[#e8bd3f] px-3 py-1.5 text-sm font-black text-[#101113]">
                 Contact
               </span>
               <h2
-                className={`text-4xl md:text-5xl font-bold mb-4 ${
-                  isDarkMode ? "text-white" : "text-slate-800"
+                className={`text-balance mb-5 text-4xl font-black leading-none md:text-6xl ${
+                  isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
                 }`}
               >
-                Let's talk
+                Tell us what needs to ship.
               </h2>
               <p
-                className={`text-lg mb-6 ${
-                  isDarkMode ? "text-slate-400" : "text-slate-500"
+                className={`mb-8 max-w-md text-lg leading-8 ${
+                  isDarkMode ? "text-[#f6f3ec]/62" : "text-[#101113]/62"
                 }`}
               >
-                Tell us about your project. We respond within 24 hours.
+                Send the goal, timeline, and any messy context. We respond
+                within one business day.
               </p>
               <div
-                className={`space-y-3 text-sm ${
-                  isDarkMode ? "text-slate-500" : "text-slate-400"
+                className={`grid gap-3 text-sm ${
+                  isDarkMode ? "text-[#f6f3ec]/48" : "text-[#101113]/52"
                 }`}
               >
                 <p>No commitment required</p>
-                <p>Free strategy advice included</p>
+                <p>Practical strategy advice included</p>
                 <p>We'll tell you honestly if we're not the right fit</p>
               </div>
             </div>
@@ -66,18 +76,18 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
             <div>
               {status === "success" ? (
                 <div
-                  className={`rounded-2xl p-8 text-center ${
-                    isDarkMode ? "bg-slate-800/50" : "bg-neutral-50"
+                  className={`rounded-lg p-8 text-center ${
+                    isDarkMode ? "bg-[#101113]/55" : "bg-white/70"
                   }`}
                 >
                   <h3
-                    className={`text-2xl font-semibold mb-2 ${
-                      isDarkMode ? "text-white" : "text-slate-800"
+                    className={`mb-2 text-2xl font-black ${
+                      isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
                     }`}
                   >
-                    Message sent!
+                    Message sent.
                   </h3>
-                  <p className={isDarkMode ? "text-slate-400" : "text-slate-500"}>
+                  <p className={isDarkMode ? "text-[#f6f3ec]/58" : "text-[#101113]/62"}>
                     We'll be in touch within 24 hours.
                   </p>
                 </div>
@@ -87,7 +97,7 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                     <label
                       htmlFor="landing-email"
                       className={`block text-sm font-medium ${
-                        isDarkMode ? "text-slate-300" : "text-gray-700"
+                        isDarkMode ? "text-[#f6f3ec]/70" : "text-[#101113]/72"
                       }`}
                     >
                       Email address
@@ -98,10 +108,10 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                       name="email"
                       required
                       placeholder="you@company.com"
-                      className={`w-full px-4 py-3 rounded-xl border transition focus:outline-none focus:ring-2 ${
+                      className={`w-full rounded-lg border px-4 py-3 transition focus:outline-none focus:ring-2 ${
                         isDarkMode
-                          ? "bg-slate-800/50 border-slate-700 text-white placeholder-slate-500 focus:ring-slate-500"
-                          : "bg-white border-gray-300 text-slate-800 placeholder-gray-400 focus:ring-slate-400"
+                          ? "border-white/10 bg-[#101113]/65 text-[#f6f3ec] placeholder:text-[#f6f3ec]/34 focus:ring-[#e8bd3f]"
+                          : "border-[#101113]/12 bg-white text-[#101113] placeholder:text-[#101113]/34 focus:ring-[#e8bd3f]"
                       }`}
                     />
                   </div>
@@ -110,7 +120,7 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                     <label
                       htmlFor="landing-message"
                       className={`block text-sm font-medium ${
-                        isDarkMode ? "text-slate-300" : "text-gray-700"
+                        isDarkMode ? "text-[#f6f3ec]/70" : "text-[#101113]/72"
                       }`}
                     >
                       Tell us about your project
@@ -120,10 +130,10 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                       name="message"
                       required
                       placeholder="What are you building? What's the timeline?"
-                      className={`w-full px-4 py-3 rounded-xl border min-h-[150px] resize-none transition focus:outline-none focus:ring-2 ${
+                      className={`min-h-[160px] w-full resize-none rounded-lg border px-4 py-3 transition focus:outline-none focus:ring-2 ${
                         isDarkMode
-                          ? "bg-slate-800/50 border-slate-700 text-white placeholder-slate-500 focus:ring-slate-500"
-                          : "bg-white border-gray-300 text-slate-800 placeholder-gray-400 focus:ring-slate-400"
+                          ? "border-white/10 bg-[#101113]/65 text-[#f6f3ec] placeholder:text-[#f6f3ec]/34 focus:ring-[#e8bd3f]"
+                          : "border-[#101113]/12 bg-white text-[#101113] placeholder:text-[#101113]/34 focus:ring-[#e8bd3f]"
                       }`}
                     />
                   </div>
@@ -134,8 +144,12 @@ const ContactSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                     </p>
                   )}
 
-                  <Button type="submit" variant={isDarkMode ? "light" : "dark"}>
-                    {status === "submitting" ? "Sending..." : "Send Message"}
+                  <Button
+                    type="submit"
+                    variant={isDarkMode ? "light" : "dark"}
+                    disabled={status === "submitting"}
+                  >
+                    {status === "submitting" ? "Sending..." : "Send message"}
                     <img
                       src="/arrow-right.svg"
                       alt="arrow right"

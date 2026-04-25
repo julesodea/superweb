@@ -25,60 +25,58 @@ const testimonials = [
 ];
 
 const stats = [
-  { number: "50+", label: "SaaS products launched" },
+  { number: "47", label: "SaaS products launched" },
   { number: "3.1x", label: "Avg. conversion lift" },
-  { number: "7 days", label: "Avg. delivery time" },
+  { number: "6.5 days", label: "Avg. first draft" },
 ];
 
 const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
-    <section id="results" className="py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="results" className="px-4 py-28">
+      <div className="mx-auto max-w-6xl">
         <SectionWrapper>
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-[#FCD34D] text-black">
+          <div className="mb-16 grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+            <span className="inline-block w-fit rounded-md bg-[#e8bd3f] px-3 py-1.5 text-sm font-black text-[#101113]">
               Results
             </span>
             <h2
-              className={`text-4xl md:text-5xl font-bold mb-4 ${
-                isDarkMode ? "text-white" : "text-slate-800"
+              className={`text-balance text-4xl font-black leading-none md:text-6xl ${
+                isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
               }`}
             >
-              Don't take our word for it
+              Proof that reads like a real launch report.
             </h2>
           </div>
         </SectionWrapper>
 
         <SectionWrapper>
           <div
-            className={`relative overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 rounded-2xl p-8 ${
-              isDarkMode ? "bg-slate-800/50" : "bg-neutral-50"
+            className={`relative mb-16 grid grid-cols-1 overflow-hidden rounded-xl p-8 md:grid-cols-3 ${
+              isDarkMode
+                ? "border border-white/8 bg-white/[0.045]"
+                : "border border-[#101113]/8 bg-white/55"
             }`}
           >
-            {/* Grid pattern overlay */}
-            <div className="absolute inset-0 pointer-events-none opacity-50">
-              <div
-                className={`
-                  absolute inset-0 bg-size-[3rem_3rem]
-                  ${
-                    isDarkMode
-                      ? "bg-[linear-gradient(to_right,#64748b20_1px,transparent_1px),linear-gradient(to_bottom,#64748b20_1px,transparent_1px)]"
-                      : "bg-[linear-gradient(to_right,#4b5563_1px,transparent_1px),linear-gradient(to_bottom,#4b5563_1px,transparent_1px)] opacity-[0.08]"
-                  }
-                `}
-              />
-            </div>
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <div
+                key={index}
+                className={`relative p-6 text-left ${
+                  index > 0
+                    ? isDarkMode
+                      ? "border-t border-white/8 md:border-l md:border-t-0"
+                      : "border-t border-[#101113]/8 md:border-l md:border-t-0"
+                    : ""
+                }`}
+              >
                 <div
-                  className={`text-4xl md:text-5xl font-bold mb-2 ${
-                    isDarkMode ? "text-white" : "text-slate-800"
+                  className={`mb-3 text-5xl font-black tabular-nums md:text-6xl ${
+                    isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
                   }`}
                 >
                   {stat.number}
                 </div>
                 <div
-                  className={isDarkMode ? "text-slate-400" : "text-slate-500"}
+                  className={isDarkMode ? "text-[#f6f3ec]/56" : "text-[#101113]/60"}
                 >
                   {stat.label}
                 </div>
@@ -87,39 +85,41 @@ const SocialProofSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           </div>
         </SectionWrapper>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {testimonials.map((t, index) => (
-            <SectionWrapper key={index}>
+            <SectionWrapper key={index} delay={index * 0.08}>
               <div
-                className={`rounded-2xl p-8 h-full flex flex-col justify-between ${
-                  isDarkMode ? "bg-slate-800/30" : "bg-neutral-50"
+                className={`flex h-full flex-col justify-between rounded-lg p-6 ${
+                  isDarkMode
+                    ? "border border-white/8 bg-white/[0.04]"
+                    : "border border-[#101113]/8 bg-white/50"
                 }`}
               >
                 <p
-                  className={`text-lg mb-6 leading-relaxed ${
-                    isDarkMode ? "text-slate-300" : "text-slate-600"
+                  className={`mb-8 text-lg leading-8 ${
+                    isDarkMode ? "text-[#f6f3ec]/76" : "text-[#101113]/72"
                   }`}
                 >
                   "{t.quote}"
                 </p>
                 <div>
                   <div
-                    className={`font-semibold ${
-                      isDarkMode ? "text-white" : "text-slate-800"
+                    className={`font-black ${
+                      isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
                     }`}
                   >
                     {t.name}
                   </div>
                   <div
                     className={`text-sm ${
-                      isDarkMode ? "text-slate-500" : "text-slate-400"
+                      isDarkMode ? "text-[#f6f3ec]/44" : "text-[#101113]/48"
                     }`}
                   >
                     {t.role}
                   </div>
                   <div
-                    className={`text-sm font-medium mt-2 ${
-                      isDarkMode ? "text-slate-400" : "text-slate-500"
+                    className={`mt-3 text-sm font-black ${
+                      isDarkMode ? "text-[#e8bd3f]" : "text-[#101113]"
                     }`}
                   >
                     {t.metric}

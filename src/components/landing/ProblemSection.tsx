@@ -17,38 +17,46 @@ const pains = [
 
 const ProblemSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
-    <section className="py-24 px-4">
-      <div className="max-w-5xl mx-auto">
+    <section className="px-4 py-28">
+      <div className="mx-auto max-w-6xl">
         <SectionWrapper>
-          <div className="text-center mb-16">
+          <div className="mb-14 grid gap-6 md:grid-cols-[0.85fr_1.15fr] md:items-end">
+            <p className="text-sm font-semibold text-[#e8bd3f]">
+              What usually stalls a launch
+            </p>
             <h2
-              className={`text-3xl md:text-5xl font-bold mb-6 ${
-                isDarkMode ? "text-white" : "text-slate-800"
+              className={`text-balance text-4xl font-black leading-none md:text-6xl ${
+                isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
               }`}
             >
-              Sound familiar?
+              The website is rarely the only problem.
             </h2>
           </div>
         </SectionWrapper>
 
-        <div className="space-y-8">
+        <div className="grid gap-4 md:grid-cols-3">
           {pains.map((pain, index) => (
-            <SectionWrapper key={index}>
+            <SectionWrapper key={index} delay={index * 0.08}>
               <div
-                className={`rounded-2xl p-8 md:p-10 ${
-                  isDarkMode ? "bg-slate-800/30" : "bg-neutral-50"
+                className={`group h-full rounded-lg p-6 transition-all duration-300 hover:-translate-y-1 ${
+                  isDarkMode
+                    ? "border border-white/8 bg-white/[0.045] hover:bg-white/[0.065]"
+                    : "border border-[#101113]/8 bg-white/50 hover:bg-white/80"
                 }`}
               >
+                <span className="mb-8 block text-sm font-black tabular-nums text-[#e8bd3f]">
+                  0{index + 1}
+                </span>
                 <h3
-                  className={`text-xl md:text-2xl font-semibold mb-3 ${
-                    isDarkMode ? "text-white" : "text-slate-800"
+                  className={`mb-4 text-xl font-black leading-tight ${
+                    isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
                   }`}
                 >
                   {pain.headline}
                 </h3>
                 <p
-                  className={`text-lg leading-relaxed ${
-                    isDarkMode ? "text-slate-400" : "text-slate-500"
+                  className={`leading-7 ${
+                    isDarkMode ? "text-[#f6f3ec]/58" : "text-[#101113]/62"
                   }`}
                 >
                   {pain.body}
@@ -60,8 +68,8 @@ const ProblemSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
         <SectionWrapper>
           <p
-            className={`text-center text-xl md:text-2xl font-medium mt-16 ${
-              isDarkMode ? "text-slate-200" : "text-slate-700"
+            className={`mx-auto mt-16 max-w-3xl text-balance text-center text-2xl font-black leading-tight md:text-4xl ${
+              isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
             }`}
           >
             You don't need another agency.

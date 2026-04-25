@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import SectionWrapper from "./SectionWrapper";
 
 const faqs = [
@@ -34,44 +34,46 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 px-4">
-      <div className="max-w-3xl mx-auto">
+    <section id="faq" className="px-4 py-28">
+      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
         <SectionWrapper>
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-[#FCD34D] text-black">
+          <div className="md:sticky md:top-28">
+            <span className="mb-6 inline-block rounded-md bg-[#e8bd3f] px-3 py-1.5 text-sm font-black text-[#101113]">
               FAQ
             </span>
             <h2
-              className={`text-4xl md:text-5xl font-bold ${
-                isDarkMode ? "text-white" : "text-slate-800"
+              className={`text-balance text-4xl font-black leading-none md:text-6xl ${
+                isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
               }`}
             >
-              Questions? Answered.
+              Questions we usually answer before kickoff.
             </h2>
           </div>
         </SectionWrapper>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
-            <SectionWrapper key={index}>
+            <SectionWrapper key={index} delay={(index % 3) * 0.05}>
               <div
-                className={`rounded-2xl overflow-hidden ${
-                  isDarkMode ? "bg-slate-800/30" : "bg-neutral-50"
+                className={`overflow-hidden rounded-lg ${
+                  isDarkMode
+                    ? "border border-white/8 bg-white/[0.04]"
+                    : "border border-[#101113]/8 bg-white/50"
                 }`}
               >
                 <button
                   onClick={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
-                  className={`w-full text-left p-6 flex justify-between items-center gap-4 ${
+                  className={`flex w-full items-center justify-between gap-4 p-6 text-left transition-colors ${
                     isDarkMode
-                      ? "text-white hover:bg-slate-800/50"
-                      : "text-slate-800 hover:bg-neutral-100"
-                  } transition-colors`}
+                      ? "text-[#f6f3ec] hover:bg-white/[0.05]"
+                      : "text-[#101113] hover:bg-white/80"
+                  }`}
                 >
-                  <span className="text-lg font-medium">{faq.question}</span>
+                  <span className="text-lg font-black">{faq.question}</span>
                   <span
-                    className={`text-2xl shrink-0 transition-transform duration-200 ${
+                    className={`grid h-8 w-8 shrink-0 place-items-center rounded-md bg-[#e8bd3f]/12 text-2xl leading-none text-[#e8bd3f] transition-transform duration-300 ${
                       openIndex === index ? "rotate-45" : ""
                     }`}
                   >
@@ -90,7 +92,7 @@ const FAQSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
                     >
                       <div
                         className={`px-6 pt-2 pb-6 ${
-                          isDarkMode ? "text-slate-400" : "text-slate-500"
+                          isDarkMode ? "text-[#f6f3ec]/58" : "text-[#101113]/62"
                         }`}
                       >
                         <p className="leading-relaxed">{faq.answer}</p>

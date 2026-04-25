@@ -10,15 +10,15 @@ const companies = [
 ];
 
 const CompanyItem = ({ company, isDarkMode }: { company: typeof companies[number]; isDarkMode?: boolean }) => (
-  <div className="flex flex-col items-center justify-center mx-10 shrink-0">
-    <span className={`text-xl md:text-2xl font-bold tracking-wide whitespace-nowrap ${
-      isDarkMode ? "text-slate-700" : "text-gray-300"
+  <div className="mx-10 flex shrink-0 flex-col items-center justify-center">
+    <span className={`whitespace-nowrap text-xl font-black tracking-normal md:text-2xl ${
+      isDarkMode ? "text-[#f6f3ec]/18" : "text-[#101113]/18"
     }`}>
       {company.name}
     </span>
     {company.subtitle && (
       <span className={`text-[8px] md:text-[10px] tracking-widest uppercase whitespace-nowrap ${
-        isDarkMode ? "text-slate-700" : "text-gray-300"
+        isDarkMode ? "text-[#f6f3ec]/16" : "text-[#101113]/16"
       }`}>
         {company.subtitle}
       </span>
@@ -31,8 +31,8 @@ const LogoBanner: React.FC<{ isDarkMode?: boolean }> = ({ isDarkMode }) => {
   const items = [...companies, ...companies];
 
   return (
-    <div className={`py-8 overflow-hidden transition-colors duration-300 ${
-      isDarkMode ? "bg-neutral-950" : "bg-neutral-50"
+    <div className={`overflow-hidden py-8 transition-colors duration-300 ${
+      isDarkMode ? "bg-[#101113]" : "bg-[#f6f3ec]"
     }`}>
       <div className="flex animate-marquee">
         {items.map((company, index) => (

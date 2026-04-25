@@ -2,20 +2,20 @@ import SectionWrapper from "./SectionWrapper";
 
 const services = [
   {
-    title: "Website & Landing Page",
+    title: "Websites and landing pages",
     description:
       "High-converting pages designed to turn visitors into customers.",
   },
   {
-    title: "Brand Systems",
+    title: "Brand systems",
     description: "Cohesive visual identity that scales with your product.",
   },
   {
-    title: "Product Design",
+    title: "Product design",
     description: "Intuitive interfaces that users love and teams ship fast.",
   },
   {
-    title: "Growth Assets",
+    title: "Growth assets",
     description:
       "Sales decks, one-pagers, and GTM collateral that close deals.",
   },
@@ -24,32 +24,32 @@ const services = [
     description: "Clean, production-ready code in React, Webflow, or Framer.",
   },
   {
-    title: "Analytics & Dashboards",
-    description: "Custom reporting dashboards and data visualization that drive decisions.",
+    title: "Ecommerce development",
+    description: "Custom Shopify stores, themes, and apps built to convert and scale.",
   },
 ];
 
 const ServicesGridSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
-    <section id="services" className="py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="services" className="px-4 py-28">
+      <div className="mx-auto max-w-6xl">
         <SectionWrapper>
-          <div className="text-center mb-16">
+          <div className="mb-16 max-w-3xl">
             <span
-              className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-[#FCD34D] text-black"
+              className="mb-6 inline-block rounded-md bg-[#e8bd3f] px-3 py-1.5 text-sm font-black text-[#101113]"
             >
               Services
             </span>
             <h2
-              className={`text-4xl md:text-5xl font-bold mb-4 ${
-                isDarkMode ? "text-white" : "text-slate-800"
+              className={`text-balance mb-5 text-4xl font-black leading-none md:text-6xl ${
+                isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
               }`}
             >
-              What We Create
+              What we build when speed and clarity matter.
             </h2>
             <p
-              className={`text-lg max-w-2xl mx-auto ${
-                isDarkMode ? "text-slate-400" : "text-slate-500"
+              className={`max-w-2xl text-lg leading-8 ${
+                isDarkMode ? "text-[#f6f3ec]/62" : "text-[#101113]/64"
               }`}
             >
               Everything a SaaS scale-up needs to move faster, convert clearer,
@@ -58,26 +58,35 @@ const ServicesGridSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
           </div>
         </SectionWrapper>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-6">
           {services.map((service, index) => (
-            <SectionWrapper key={index}>
+            <SectionWrapper
+              key={index}
+              delay={(index % 3) * 0.07}
+              className={`h-full ${
+                index === 0 || index === 5 ? "md:col-span-3" : "md:col-span-2"
+              }`}
+            >
               <div
-                className={`rounded-2xl p-8 h-full transition-colors ${
+                className={`group flex h-full min-h-[220px] flex-col justify-between rounded-lg p-6 transition-all duration-300 hover:-translate-y-1 ${
                   isDarkMode
-                    ? "bg-slate-800/30 hover:bg-slate-800/50"
-                    : "bg-neutral-50 hover:bg-neutral-100"
+                    ? "border border-white/8 bg-white/[0.045] hover:bg-white/[0.07]"
+                    : "border border-[#101113]/8 bg-white/55 hover:bg-white"
                 }`}
               >
+                <span className="mb-10 block text-xs font-black tabular-nums text-[#e8bd3f]">
+                  {(index + 1).toString().padStart(2, "0")}
+                </span>
                 <h3
-                  className={`text-xl font-semibold mb-3 ${
-                    isDarkMode ? "text-white" : "text-slate-800"
+                  className={`mb-3 text-2xl font-black leading-tight ${
+                    isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
                   }`}
                 >
                   {service.title}
                 </h3>
                 <p
-                  className={`text-sm leading-relaxed ${
-                    isDarkMode ? "text-slate-400" : "text-slate-500"
+                  className={`max-w-sm leading-7 ${
+                    isDarkMode ? "text-[#f6f3ec]/58" : "text-[#101113]/62"
                   }`}
                 >
                   {service.description}

@@ -23,45 +23,57 @@ const steps = [
 
 const HowItWorksSection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
-    <section id="process" className="py-24 px-4">
-      <div className="max-w-5xl mx-auto">
+    <section id="process" className="px-4 py-28">
+      <div className="mx-auto max-w-6xl">
         <SectionWrapper>
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-[#FCD34D] text-black">
+          <div className="mb-16 max-w-3xl">
+            <span className="mb-6 inline-block rounded-md bg-[#e8bd3f] px-3 py-1.5 text-sm font-black text-[#101113]">
               Process
             </span>
             <h2
-              className={`text-4xl md:text-5xl font-bold mb-4 ${
-                isDarkMode ? "text-white" : "text-slate-800"
+              className={`text-balance text-4xl font-black leading-none md:text-6xl ${
+                isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
               }`}
             >
-              Three steps. That's it.
+              Three steps, with fewer places to lose momentum.
             </h2>
           </div>
         </SectionWrapper>
 
-        <div className="space-y-8">
+        <div
+          className={`overflow-hidden rounded-xl border ${
+            isDarkMode ? "border-white/8" : "border-[#101113]/8"
+          }`}
+        >
           {steps.map((item, index) => (
-            <SectionWrapper key={index}>
-              <div className="flex items-start gap-6 md:gap-10">
+            <SectionWrapper key={index} delay={index * 0.08}>
+              <div
+                className={`grid gap-6 p-6 md:grid-cols-[10rem_1fr] md:p-8 ${
+                  index > 0
+                    ? isDarkMode
+                      ? "border-t border-white/8"
+                      : "border-t border-[#101113]/8"
+                    : ""
+                } ${isDarkMode ? "bg-white/[0.035]" : "bg-white/45"}`}
+              >
                 <span
-                  className={`text-5xl md:text-6xl font-bold shrink-0 w-[1.5em] text-center tabular-nums ${
-                    isDarkMode ? "text-slate-700" : "text-neutral-200"
+                  className={`text-5xl font-black tabular-nums md:text-7xl ${
+                    isDarkMode ? "text-[#e8bd3f]" : "text-[#101113]/18"
                   }`}
                 >
                   {item.step}
                 </span>
                 <div>
                   <h3
-                    className={`text-2xl font-semibold mb-2 ${
-                      isDarkMode ? "text-white" : "text-slate-800"
+                    className={`mb-3 text-2xl font-black ${
+                      isDarkMode ? "text-[#f6f3ec]" : "text-[#101113]"
                     }`}
                   >
                     {item.title}
                   </h3>
                   <p
-                    className={`text-lg ${
-                      isDarkMode ? "text-slate-400" : "text-slate-500"
+                    className={`max-w-2xl text-lg leading-8 ${
+                      isDarkMode ? "text-[#f6f3ec]/58" : "text-[#101113]/62"
                     }`}
                   >
                     {item.description}

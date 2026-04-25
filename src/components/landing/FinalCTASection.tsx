@@ -3,39 +3,40 @@ import SectionWrapper from "./SectionWrapper";
 
 const FinalCTASection = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
-    <section className="py-24 px-4">
-      <div className="max-w-4xl mx-auto">
+    <section className="px-4 py-28">
+      <div className="mx-auto max-w-6xl">
         <SectionWrapper>
           <div
-            className={`rounded-3xl p-10 md:p-16 text-center ${
-              isDarkMode ? "bg-slate-800/50" : "bg-neutral-50"
+            className={`relative overflow-hidden rounded-xl p-8 md:p-14 ${
+              isDarkMode
+                ? "border border-white/8 bg-[#e8bd3f]/10"
+                : "border border-[#101113]/8 bg-[#101113]"
             }`}
           >
             <h2
-              className={`text-3xl md:text-5xl font-bold mb-6 ${
-                isDarkMode ? "text-white" : "text-slate-800"
+              className={`text-balance mb-6 max-w-4xl text-4xl font-black leading-none md:text-6xl ${
+                isDarkMode ? "text-[#f6f3ec]" : "text-[#f6f3ec]"
               }`}
             >
-              Stop losing customers to bad design
+              Replace the vague website brief with a launch plan.
             </h2>
             <p
-              className={`text-lg md:text-xl mb-4 max-w-2xl mx-auto ${
-                isDarkMode ? "text-slate-300" : "text-slate-600"
+              className={`mb-4 max-w-2xl text-lg leading-8 md:text-xl ${
+                isDarkMode ? "text-[#f6f3ec]/68" : "text-[#f6f3ec]/70"
               }`}
             >
-              Go from a site that "looks nice" to one that prints money. Book a
-              free strategy call. We'll show you exactly what's costing you
-              conversions.
+              Book a strategy call and we will map the pages, message, and
+              build path that give your team the fastest credible launch.
             </p>
             <p
-              className={`text-sm mb-8 ${
-                isDarkMode ? "text-slate-500" : "text-slate-400"
+              className={`mb-8 text-sm ${
+                isDarkMode ? "text-[#f6f3ec]/44" : "text-[#f6f3ec]/46"
               }`}
             >
               No commitment. No sales pitch. Just honest advice on your product.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="#contact" variant={isDarkMode ? "light" : "dark"}>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Button href="#contact" variant="dark">
                 Book your free call
                 <img
                   src="/arrow-right.svg"
@@ -47,8 +48,8 @@ const FinalCTASection = ({ isDarkMode }: { isDarkMode: boolean }) => {
               </Button>
             </div>
             <p
-              className={`text-xs mt-6 ${
-                isDarkMode ? "text-slate-600" : "text-slate-400"
+              className={`mt-6 text-xs ${
+                isDarkMode ? "text-[#f6f3ec]/34" : "text-[#f6f3ec]/38"
               }`}
             >
               Not satisfied? Full refund. No questions asked.

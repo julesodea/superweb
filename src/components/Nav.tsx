@@ -18,42 +18,43 @@ export const Nav = ({ isDarkMode, onToggle }: { isDarkMode?: boolean; onToggle?:
     { label: "FAQ", href: "#faq" },
   ];
 
-  // Light text only when not scrolled AND in dark mode
   const useLight = !isScrolled && isDarkMode;
 
   return (
     <nav className="sticky top-0 left-0 right-0 z-50 flex justify-center px-4 py-4">
       <div
-        className={`flex items-center gap-6 rounded-full px-4 py-2 transition-all duration-500 ease-out ${
+        className={`flex w-full max-w-5xl items-center justify-between gap-6 rounded-full px-3 py-2 transition-all duration-500 ease-out md:w-auto md:justify-center md:px-4 ${
           isScrolled
-            ? "bg-white/70 backdrop-blur-xl shadow-lg shadow-black/5 border border-gray-200/50"
-            : "bg-transparent border border-transparent shadow-none"
+            ? "border border-black/8 bg-[#f6f3ec]/86 shadow-[0_18px_50px_rgba(20,17,13,0.12)] backdrop-blur-xl"
+            : "border border-transparent bg-transparent shadow-none"
         }`}
       >
-        {/* Logo */}
-        <a href="/" className="flex-shrink-0 flex items-center gap-2">
+        <a
+          href="/"
+          className="flex flex-shrink-0 items-center gap-2 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8BD3F]"
+          aria-label="Superweb home"
+        >
           <img
             src="/icon.png"
-            alt="Logo"
+            alt=""
             width="30"
             height="30"
             className="w-8 h-8"
           />
-          <span className={`text-lg font-light transition-colors duration-500 ${
-            useLight ? "text-white" : "text-gray-900"
+          <span className={`text-lg font-semibold transition-colors duration-500 ${
+            useLight ? "text-[#f6f3ec]" : "text-[#101113]"
           }`}>superweb</span>
         </a>
 
-        {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className={`text-sm font-medium transition-colors duration-500 whitespace-nowrap ${
+              className={`rounded-full px-1 text-sm font-semibold transition-colors duration-500 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8BD3F] ${
                 useLight
-                  ? "text-white/80 hover:text-white"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-[#f6f3ec]/72 hover:text-[#f6f3ec]"
+                  : "text-[#101113]/62 hover:text-[#101113]"
               }`}
             >
               {link.label}
@@ -61,53 +62,54 @@ export const Nav = ({ isDarkMode, onToggle }: { isDarkMode?: boolean; onToggle?:
           ))}
         </div>
 
-        {/* Right side: Toggle + CTA */}
         <div className="hidden md:flex items-center gap-3">
           {onToggle && (
-            <label className="inline-flex items-center cursor-pointer">
+            <label className="inline-flex cursor-pointer items-center" aria-label="Toggle color theme">
               <input
                 type="checkbox"
                 checked={isDarkMode}
                 onChange={onToggle}
                 className="sr-only peer"
               />
-              <div className={`relative w-11 h-6 rounded-full peer after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full peer-checked:after:border-white ${
-                useLight ? "bg-white/30 peer-checked:bg-white/50" : "bg-gray-200 peer-checked:bg-gray-600"
+              <div className={`relative h-6 w-11 rounded-full transition-colors peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-[#E8BD3F] after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-black/10 after:bg-white after:transition-transform after:content-[''] peer-checked:after:translate-x-full ${
+                useLight ? "bg-white/24 peer-checked:bg-white/42" : "bg-black/10 peer-checked:bg-[#101113]"
               }`} />
             </label>
           )}
           <a
             href="#contact"
-            className={`px-5 py-2.5 text-sm font-medium rounded-full transition-colors duration-500 whitespace-nowrap ${
+            className={`whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8BD3F] active:translate-y-px ${
               useLight
-                ? "bg-white text-gray-900 hover:bg-white/90"
-                : "bg-gray-900 text-white hover:bg-gray-800"
+                ? "bg-[#f6f3ec] text-[#101113] hover:bg-white"
+                : "bg-[#101113] text-[#f6f3ec] hover:bg-[#24211c]"
             }`}
           >
             Book a call
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={`md:hidden p-2 transition-colors duration-500 ${
-            useLight ? "text-white/80 hover:text-white" : "text-gray-600 hover:text-gray-900"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className={`grid h-10 w-10 place-items-center rounded-full transition-colors duration-500 md:hidden ${
+            useLight ? "text-[#f6f3ec]/80 hover:text-[#f6f3ec]" : "text-[#101113]/70 hover:text-[#101113]"
           }`}
         >
-          {isMenuOpen ? "CLOSE" : "MENU"}
+          <span className="relative block h-3.5 w-5">
+            <span className={`absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform ${isMenuOpen ? "translate-y-1.5 rotate-45" : ""}`} />
+            <span className={`absolute bottom-0 left-0 h-0.5 w-5 bg-current transition-transform ${isMenuOpen ? "-translate-y-1.5 -rotate-45" : ""}`} />
+          </span>
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-full left-4 right-4 mt-2 md:hidden bg-white/90 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-4 space-y-3 shadow-lg">
+        <div className="absolute left-4 right-4 top-full mt-2 space-y-3 rounded-xl border border-black/10 bg-[#f6f3ec]/94 p-4 shadow-[0_18px_50px_rgba(20,17,13,0.16)] backdrop-blur-xl md:hidden">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
-              className="block text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2"
+              className="block rounded-lg px-2 py-2 text-sm font-semibold text-[#101113]/70 transition-colors hover:bg-[#101113]/5 hover:text-[#101113]"
             >
               {link.label}
             </a>
@@ -115,7 +117,7 @@ export const Nav = ({ isDarkMode, onToggle }: { isDarkMode?: boolean; onToggle?:
           <a
             href="#contact"
             onClick={() => setIsMenuOpen(false)}
-            className="block text-center px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+            className="block rounded-full bg-[#101113] px-5 py-2.5 text-center text-sm font-semibold text-[#f6f3ec] transition-colors hover:bg-[#24211c]"
           >
             Book a call
           </a>
