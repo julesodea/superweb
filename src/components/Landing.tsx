@@ -33,9 +33,36 @@ export const LandingComponent = () => {
     transition: { duration: 0.75, delay, ease: motionEase },
   });
 
+  const ownerSignals = [
+    {
+      label: "Primary offer",
+      status: "buyer-ready",
+      score: "92%",
+      note: "Clear path from pain to demo",
+    },
+    {
+      label: "Trial intent",
+      status: "rising",
+      score: "38%",
+      note: "CTA sequence tuned for evaluation",
+    },
+    {
+      label: "Sales proof",
+      status: "placed",
+      score: "84%",
+      note: "Use cases matched to buyer objections",
+    },
+  ];
+
+  const boardMetrics = [
+    ["Demo asks", "+27.4%"],
+    ["Time to decision", "11 days"],
+    ["Launch risk", "low"],
+  ];
+
   return (
     <div
-      className={`min-h-screen overflow-hidden transition-colors duration-300 ${
+      className={`min-h-[100dvh] overflow-hidden transition-colors duration-300 ${
         isDarkMode ? "bg-[#101113]" : "bg-[#f6f3ec]"
       }`}
     >
@@ -63,14 +90,14 @@ export const LandingComponent = () => {
                   }`}
                 >
                   <span className="h-2 w-2 rounded-full bg-[#e8bd3f]" />
-                  SaaS websites, launch pages, and product UI
+                  SaaS launch strategy, product pages, and buyer journeys
                 </motion.div>
 
                 <motion.h1
                   {...reveal(0.14)}
-                  className="text-balance max-w-5xl text-[clamp(3rem,8vw,7.75rem)] font-black leading-[0.88] tracking-normal"
+                  className="text-balance max-w-5xl text-[clamp(3rem,8vw,7.75rem)] font-black leading-[0.96] tracking-normal"
                 >
-                  Ship a site that makes the next step obvious.
+                  Turn product interest into booked demos.
                 </motion.h1>
 
                 <motion.p
@@ -79,9 +106,9 @@ export const LandingComponent = () => {
                     isDarkMode ? "text-[#f6f3ec]/72" : "text-[#101113]/68"
                   }`}
                 >
-                  Superweb designs and builds focused marketing sites for SaaS
-                  teams that need clearer positioning, cleaner product stories,
-                  and fewer handoffs before launch.
+                  Superweb helps SaaS founders and product owners sharpen the
+                  offer, explain the product faster, and launch a website that
+                  gives sales a cleaner conversation to follow.
                 </motion.p>
 
                 <motion.div
@@ -123,19 +150,19 @@ export const LandingComponent = () => {
                     <strong className="block text-2xl font-black tabular-nums text-[#e8bd3f]">
                       47
                     </strong>
-                    products launched
+                    SaaS launches
                   </div>
                   <div>
                     <strong className="block text-2xl font-black tabular-nums text-[#e8bd3f]">
                       6.5
                     </strong>
-                    days avg. first draft
+                    days to first direction
                   </div>
                   <div>
                     <strong className="block text-2xl font-black tabular-nums text-[#e8bd3f]">
                       3.1x
                     </strong>
-                    avg. demo lift
+                    clearer demo path
                   </div>
                 </motion.div>
               </div>
@@ -144,21 +171,50 @@ export const LandingComponent = () => {
                 {...reveal(0.28)}
                 className="animate-float-slow hero-panel relative ml-auto w-full max-w-[560px] rounded-xl border border-white/10 bg-[#151619]/82 p-3 text-[#f6f3ec] backdrop-blur-xl"
               >
-                <div className="flex items-center gap-2 border-b border-white/10 px-2 py-3">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#e8614d]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#e8bd3f]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#77b989]" />
-                  <span className="ml-3 text-xs font-medium text-white/42">
-                    launch-readiness.ts
-                  </span>
+                <div className="flex flex-col gap-3 border-b border-white/10 px-2 py-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#e8bd3f]">
+                      Launch board
+                    </span>
+                    <h2 className="mt-1 text-xl font-black leading-none">
+                      Owner view
+                    </h2>
+                  </div>
+                  <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.045] px-3 py-1.5 text-xs font-semibold text-white/62">
+                    <span className="h-2 w-2 rounded-full bg-[#77b989]" />
+                    Ready for sales review
+                  </div>
                 </div>
+
                 <div className="grid gap-3 p-3">
-                  {[
-                    ["Positioning", "clear", "92"],
-                    ["Product story", "mapped", "88"],
-                    ["CTA hierarchy", "ready", "96"],
-                    ["Performance", "passing", "94"],
-                  ].map(([label, status, score], index) => (
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {boardMetrics.map(([label, value], index) => (
+                      <motion.div
+                        key={label}
+                        initial={
+                          shouldReduceMotion
+                            ? { opacity: 1, y: 0 }
+                            : { opacity: 0, y: 12 }
+                        }
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.65,
+                          delay: 0.42 + index * 0.08,
+                          ease: motionEase,
+                        }}
+                        className="rounded-lg border border-white/8 bg-white/[0.045] p-3"
+                      >
+                        <span className="block text-[11px] font-medium text-white/42">
+                          {label}
+                        </span>
+                        <strong className="mt-2 block text-lg font-black tabular-nums text-[#f6f3ec]">
+                          {value}
+                        </strong>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {ownerSignals.map(({ label, status, score, note }, index) => (
                     <motion.div
                       key={label}
                       initial={
@@ -175,7 +231,12 @@ export const LandingComponent = () => {
                       className="rounded-lg border border-white/8 bg-white/[0.045] p-4"
                     >
                       <div className="mb-3 flex items-center justify-between gap-4">
-                        <span className="text-sm font-semibold">{label}</span>
+                        <div>
+                          <span className="text-sm font-semibold">{label}</span>
+                          <p className="mt-1 text-xs leading-5 text-white/42">
+                            {note}
+                          </p>
+                        </div>
                         <span className="rounded-md bg-[#e8bd3f]/14 px-2 py-1 text-xs font-semibold text-[#e8bd3f]">
                           {status}
                         </span>
@@ -189,12 +250,31 @@ export const LandingComponent = () => {
                             delay: 0.7 + index * 0.1,
                             ease: motionEase,
                           }}
-                          style={{ transformOrigin: "left", width: `${score}%` }}
+                          style={{ transformOrigin: "left", width: score }}
                           className="h-full rounded-full bg-[#e8bd3f]"
                         />
                       </div>
                     </motion.div>
                   ))}
+
+                  <motion.div
+                    initial={
+                      shouldReduceMotion
+                        ? { opacity: 1, y: 0 }
+                        : { opacity: 0, y: 12 }
+                    }
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.86, ease: motionEase }}
+                    className="rounded-lg border border-[#e8bd3f]/18 bg-[#e8bd3f]/10 p-4"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#e8bd3f]">
+                      Next owner decision
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-[#f6f3ec]/74">
+                      Lead with rollout time saved, then move buyers to a demo
+                      before the feature comparison section.
+                    </p>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
