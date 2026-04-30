@@ -95,7 +95,7 @@ export const LandingComponent = () => {
 
                 <motion.h1
                   {...reveal(0.14)}
-                  className="text-balance max-w-5xl text-[clamp(3rem,8vw,7.75rem)] font-black leading-[0.96] tracking-normal"
+                  className="text-balance max-w-5xl text-[clamp(1.6rem,4vw,3.9rem)] font-black leading-[0.96] tracking-normal"
                 >
                   Turn product interest into booked demos.
                 </motion.h1>
